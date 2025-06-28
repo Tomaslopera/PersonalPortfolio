@@ -1,0 +1,30 @@
+.navbar {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #000; /* fondo negro */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #444; /* oscuro pero visible */
+  transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #fff;
+  font-size: 1.2rem;
+}

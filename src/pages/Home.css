@@ -1,0 +1,72 @@
+.home {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-top: 3rem;
+}
+
+.home-content {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px; /* antes estaba en 900px */
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.15);
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.about-me h3 {
+  color: #4da6ff; /* azul suave */
+  margin-bottom: 1rem;
+}
+
+.about-me p {
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+footer {
+  margin-top: 0;
+}
+
