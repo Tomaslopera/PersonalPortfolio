@@ -12,6 +12,19 @@
   flex-shrink: 0;
 }
 
+.project-card h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-card p {
+  text-align: center;
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
 
 
 /* Cuando esté visible (via IntersectionObserver) */
@@ -30,6 +43,11 @@
   overflow-x: auto;
   gap: 10px;
   margin: 10px 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.project-images::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .project-images img {
@@ -42,26 +60,79 @@
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
-.technologies span {
-  background-color: #0044cc;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+.tech-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco si son íconos negros */
 }
+
+/* .tech-icon img:hover {
+  transform: scale(1.2);
+  filter: brightness(1);
+} */
+
 
 .btn-repo {
   display: inline-block;
-  margin-top: 15px;
-  background-color: #0044cc;
+  margin: 1.5rem auto 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12); /* mismo fondo translúcido */
+  backdrop-filter: blur(6px);
   color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 .btn-repo:hover {
-  background-color: #0066ff;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transform: scale(1.05);
 }
+
+
+.image-container {
+  position: relative;
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+.image-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.image-arrow {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 0.5rem;
+  padding: 1px 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.image-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+

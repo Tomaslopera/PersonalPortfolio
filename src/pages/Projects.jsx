@@ -4,6 +4,10 @@ import recircular1 from '../assets/projects/recircular1.png';
 import recircular2 from '../assets/projects/recircular2.png';
 import recircular3 from '../assets/projects/recircular3.png';
 import background from '../assets/background.jpg';
+import reactIcon from '../assets/technologies/react-logo.svg';
+import pythonIcon from '../assets/technologies/python-logo.svg';
+import sqlIcon from '../assets/technologies/sql-logo.png';
+import fastapiIcon from '../assets/technologies/fastapi-logo.webp';
 import './Projects.css';
 
 function Projects() {
@@ -31,15 +35,18 @@ function Projects() {
       <h1 className="projects-title">Projects</h1>
 
       <div className="carousel-container">
-        <button className="carousel-btn left" onClick={scrollLeft}>◀</button>
 
         <div className="projects-carousel" ref={carouselRef}>
           <div className="project-slide">
             <ProjectCard
               title="Recircular"
-              description="A marketplace focused on the circular economy for exchanging reusable products."
+              description="In the current context, the circular economy has become a priority for many companies and organizations seeking to reduce environmental impact and promote sustainability. In this sense, the idea of ​​developing a Marketplace-type website project with a focus on the circular economy is proposed."
               images={[recircular1, recircular2, recircular3]}
-              technologies={['React', 'FastAPI', 'MySQL']}
+              technologies={[
+                { name: 'React', icon: reactIcon },
+                { name: 'FastAPI', icon: fastapiIcon },
+                { name: 'SQL', icon: sqlIcon },
+              ]}
               repoLink="https://github.com/Tomaslopera/Recircular"
             />
           </div>
@@ -64,9 +71,12 @@ function Projects() {
             />
           </div>
         </div>
-
-        <button className="carousel-btn right" onClick={scrollRight}>▶</button>
       </div>
+
+        <div className="carousel-controls">
+            <button className="carousel-btn" onClick={scrollLeft}>◀</button>
+            <button className="carousel-btn" onClick={scrollRight}>▶</button>
+        </div>
     </section>
   );
 }

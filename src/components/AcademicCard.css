@@ -1,0 +1,42 @@
+.academic-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.academic-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.academic-card h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.academic-card h4 {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 0.3rem;
+}
+
+.date-range {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.details-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+  color: #ddd;
+}

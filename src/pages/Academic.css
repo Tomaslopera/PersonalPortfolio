@@ -1,4 +1,4 @@
-.projects-section {
+.academic-section {
   min-height: 100vh;
   padding: 100px 20px 60px;
   background-size: cover;
@@ -12,7 +12,15 @@
   align-items: center;
 }
 
-.projects-title {
+.academic-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 0;
+}
+
+.academic-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -20,46 +28,43 @@
   z-index: 1;
 }
 
-.carousel-container {
+.academic-carousel-container {
   width: 100%;
   max-width: 1200px;
   position: relative;
-  overflow: hidden;
-  padding: 0 2rem;
   z-index: 1;
 }
 
-.projects-carousel {
+.academic-carousel {
   display: flex;
-  gap: 40px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   padding: 20px 0;
   scrollbar-width: none; /* Firefox */
 }
 
-.projects-carousel::-webkit-scrollbar {
-  display: none; 
+.academic-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
-.project-slide {
-  flex: 0 0 40%;
+.academic-slide {
+  flex: 0 0 50%;
+  max-width: 600px;
+  padding: 0 10px;
   scroll-snap-align: start;
-  display: flex;
-  justify-content: center;
 }
 
-.carousel-controls {
+.academic-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   width: 100%;
 }
 
-.carousel-btn {
+.academic-btn {
   background: rgba(255, 255, 255, 0.08);
   border: none;
   color: #fff;
@@ -75,7 +80,7 @@
   height: 45px;
 }
 
-.carousel-btn:hover {
+.academic-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
 }
