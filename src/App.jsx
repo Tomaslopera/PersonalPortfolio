@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import Skills from './pages/Skills';
-// import Projects from './pages/Projects';
+import Projects from './pages/Projects';
 // import Academic from './pages/AcademicExperience';
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/skills" element={<Skills />} />
-        {/* <Route path="/projects" element={<Projects />} />
-        <Route path="/academic" element={<Academic />} /> */}
+        <Route path="/projects" element={<Projects />} />
+        {/* <Route path="/academic" element={<Academic />} /> */}
       </Routes>
       <Footer />
     </Router>

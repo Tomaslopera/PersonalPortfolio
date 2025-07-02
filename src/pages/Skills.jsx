@@ -23,20 +23,25 @@ function Skills() {
         <div className="skills-subsections">
           <div className="skills-block">
             <h2>Professional</h2>
+            <Skill name="Communication" level={4} />
             <Skill name="Teamwork" level={4} />
-            <Skill name="Scrum" level={4} />
-            <Skill name="Problem Solving" level={5} />
-            <Skill name="Project Planning" level={4} />
+            <Skill name="Problem Solving" level={4} />
+            <Skill name="Critical Thinking" level={4} />
+            <Skill name="Strategic Planning" level={4} />
+            <Skill name="Analytical Skills" level={4} />
           </div>
           <div className="divider"></div>
           <div className="skills-block">
             <h2>Technical</h2>
-            <Skill name="Python" level={5} />
-            <Skill name="SQL" level={5} />
-            <Skill name="React.js" level={4} />
+            <Skill name="Python" level={4} />
+            <Skill name="SQL" level={4} />
+            <Skill name="Pandas" level={4} />
             <Skill name="FastAPI" level={4} />
             <Skill name="AWS" level={3} />
-            <Skill name="Git & GitHub" level={4} />
+            <Skill name="Git" level={4} />
+            <Skill name="Scrum" level={3} />
+            <Skill name="PowerBI" level={3} />
+            <Skill name="Excel" level={4} />
           </div>
         </div>
       </div>

@@ -1,0 +1,41 @@
+/* Projects.css */
+
+.projects-section {
+  min-height: 100vh;
+  padding: 100px 20px 60px;
+  background-image: url('/background-projects.jpg'); /* Pon tu imagen aquí */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+/* Contenedor de tarjetas */
+.projects-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 0 10px;
+}
+
+/* Estética del scroll */
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.projects-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+

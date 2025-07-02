@@ -1,0 +1,59 @@
+.project-card {
+  background: rgba(255, 255, 255, 0.08); /* fondo translúcido */
+  backdrop-filter: blur(10px); /* efecto de vidrio difuminado */
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 350px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* sombra como en AboutMe */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0; /* evita que se achiquen al usar scroll horizontal */
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.project-images {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.project-images img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.technologies {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.technologies span {
+  background-color: #0044cc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btn-repo {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #0044cc;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-repo:hover {
+  background-color: #0066ff;
+}
+

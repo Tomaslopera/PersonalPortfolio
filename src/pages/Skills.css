@@ -57,7 +57,7 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Resaltado al pasar el mouse */
+
 .skill-item:hover {
   background-color: rgba(255, 255, 255, 0.05); /* Sombra suave y oscura */
   transform: scale(1.01);
@@ -67,17 +67,15 @@
   flex: 2;
   text-align: left;
   font-weight: bold;
-  font-size: 0.95rem; /* Letra más pequeña */
-  white-space: normal; /* Permite salto de línea */
-  word-break: break-word; /* Corta palabras largas si es necesario */
+  font-size: 0.95rem;
+  white-space: normal;
+  word-break: break-word; 
 }
-
-
 
 .skill-bar {
   flex: 3;
-  background-color: #333;
-  height: 10px;
+  background-color: #f2f2f2;
+  height: 8px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -85,15 +83,14 @@
 }
 
 .filled {
-  height: 100%;
+  height: 100%; 
   background-color: #003366;
+  border-radius: 8px;
   transition: width 0.3s ease;
 }
 
 .skill-percent {
-  width: 50px;
-  text-align: right;
-  font-size: 0.9rem;
+  display: none;
 }
 
 .divider {
