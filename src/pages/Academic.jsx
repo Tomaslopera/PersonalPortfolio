@@ -38,24 +38,28 @@ function Academic() {
             </div>
             <div className="academic-slide">
                 <AcademicCard
-                title="Researcher and Programmer in LED Light Project"
-                organization="Lienxo"
-                dateRange="06/2024 – 08/2024 (2 months)"
+                title="Innovation Hackathon participant"
+                organization="ISA"
+                dateRange="05/2024"
                 details={[
-                    'I participated in a research project involving LED light programming with the DMX protocol.',
-                    'Developed teamwork and programming skills while contributing to technical solutions for automation.',
+                    'I collaborated in a team to develop a solution based on data analysis of IS\'s databases, focused on improving the maintenance of electrical towers and power distribution.',
+                    'I used data analysis techniques to identify patterns and propose strategies to optimize the maintenance process, which could result in greater operational efficiency.',
+                    'We presented the solution to a panel of judges, highlighting the importance of data analysis in decision making for effective maintenance of electrical infrastructures.'
                 ]}
+                repoLink='https://github.com/Tomaslopera/Hackathon_ISA'
                 />
             </div>
             <div className="academic-slide">
                 <AcademicCard
-                title="Researcher and Programmer in LED Light Project"
-                organization="Lienxo"
-                dateRange="06/2024 – 08/2024 (2 months)"
+                title="AI Negotiation System Hackathon Winner"
+                organization="EIA University - Sistecredito"
+                dateRange="03/2025"
                 details={[
-                    'I participated in a research project involving LED light programming with the DMX protocol.',
-                    'Developed teamwork and programming skills while contributing to technical solutions for automation.',
+                    'I collaborated in a team to develop an AI-based negotiation system designed to assist customers facing difficulties in repaying their loans.',
+                    'The Solution analyzed historical data and generated personalized payment agreements, considering adjustments in installments and interest rates.',
+                    'We conducted exploratory data analysis and data cleaning to ensure accurate implementation in the negotiation chatbot.'
                 ]}
+                repoLink="https://github.com/Tomaslopera/Hackathon_Sistecredito"
                 />
             </div>
             </div>

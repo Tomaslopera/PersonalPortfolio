@@ -53,11 +53,15 @@ function Projects() {
 
           <div className="project-slide">
             <ProjectCard
-              title="Data Insights"
-              description="A dashboard to visualize data using PowerBI and Python."
+              title="Parkhub"
+              description="Is a parking reservation project that allows users to register, log in, change password, make a reservation and view reservation history."
               images={[recircular2]}
-              technologies={['PowerBI', 'Python']}
-              repoLink="#"
+              technologies={[
+                { name: 'React', icon: reactIcon },
+                { name: 'FastAPI', icon: fastapiIcon },
+                { name: 'SQL', icon: sqlIcon },
+              ]}
+              repoLink="https://github.com/Tomaslopera/ParkHub"
             />
           </div>
 

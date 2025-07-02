@@ -45,7 +45,7 @@ function ProjectCard({ title, description, images, technologies, repoLink }) {
             rel="noopener noreferrer"
             className="btn-repo"
         >
-            Repositorio
+            Repository
         </a>
       </div>
     </div>
