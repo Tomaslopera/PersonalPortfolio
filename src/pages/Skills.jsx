@@ -1,5 +1,6 @@
 import React from 'react';
 import './Skills.css';
+import background from '../assets/background.jpg'; 
 
 const Skill = ({ name, level }) => {
   const percentage = (level / 5) * 100;
@@ -17,7 +18,7 @@ const Skill = ({ name, level }) => {
 
 function Skills() {
   return (
-    <section className="skills-section">
+    <section className="skills-section" style={{ backgroundImage: `url(${background})` }}>
       <div className="skills-container">
         <h1>Skills</h1>
         <div className="skills-subsections">

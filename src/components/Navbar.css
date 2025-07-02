@@ -1,7 +1,8 @@
 .navbar {
   width: 100%;
   padding: 1rem 0;
-  background-color: #000; /* fondo negro */
+  background: rgba(255, 255, 255, 0.08); /* fondo translúcido */
+  backdrop-filter: blur(10px); /* fondo negro */
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +21,7 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
-  color: #444; /* oscuro pero visible */
+  color: #003366; /* oscuro pero visible */
   transition: all 0.3s ease;
 }
 

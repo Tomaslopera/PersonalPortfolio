@@ -1,26 +1,39 @@
 .home {
   min-height: 100vh;
   width: 100%;
+  background-image: url('/background-projects.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
   box-sizing: border-box;
-  margin-top: 3rem;
+  position: relative;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 0;
 }
 
 .home-content {
-  background-color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
   padding: 3rem;
   border-radius: 12px;
+  max-width: 1000px;
   width: 100%;
-  max-width: 1000px; /* antes estaba en 900px */
   text-align: center;
   color: white;
-  box-sizing: border-box;
+  z-index: 1;
 }
 
 h1 {

@@ -1,14 +1,23 @@
 .project-card {
-  background: rgba(255, 255, 255, 0.08); /* fondo translúcido */
-  backdrop-filter: blur(10px); /* efecto de vidrio difuminado */
+  width: 90%;
+  max-width: 500px;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
-  min-width: 300px;
-  max-width: 350px;
   color: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* sombra como en AboutMe */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-shrink: 0; /* evita que se achiquen al usar scroll horizontal */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+
+
+/* Cuando esté visible (via IntersectionObserver) */
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card:hover {
@@ -56,4 +65,3 @@
 .btn-repo:hover {
   background-color: #0066ff;
 }
-

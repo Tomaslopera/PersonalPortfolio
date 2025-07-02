@@ -1,14 +1,12 @@
-/* Projects.css */
-
 .projects-section {
   min-height: 100vh;
   padding: 100px 20px 60px;
-  background-image: url('/background-projects.jpg'); /* Pon tu imagen aquí */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #fff;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,25 +15,69 @@
 .projects-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #ffffff;
+  margin-bottom: 2rem;
+  color: #fff;
+  z-index: 1;
 }
 
-/* Contenedor de tarjetas */
-.projects-grid {
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.projects-carousel {
   display: flex;
-  flex-wrap: nowrap;
+  gap: 40px;
   overflow-x: auto;
-  gap: 30px;
-  padding: 0 10px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 20px 0;
 }
 
-/* Estética del scroll */
-.projects-grid::-webkit-scrollbar {
-  height: 8px;
+.project-slide {
+  flex: 0 0 40%; /* era 50%, ahora es 45% */
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
 }
-.projects-grid::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease;
+  border-radius: 8px;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+/* Ocultar scroll bar en todos los navegadores */
+.projects-carousel {
+  scrollbar-width: none; /* Firefox */
+}
+
+.projects-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
