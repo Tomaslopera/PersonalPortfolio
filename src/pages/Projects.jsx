@@ -1,14 +1,19 @@
 import React, { useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import recircular1 from '../assets/projects/recircular1.png';
-import recircular2 from '../assets/projects/recircular2.png';
-import recircular3 from '../assets/projects/recircular3.png';
 import background from '../assets/background.jpg';
 import reactIcon from '../assets/technologies/react-logo.svg';
 import pythonIcon from '../assets/technologies/python-logo.svg';
 import sqlIcon from '../assets/technologies/sql-logo.png';
 import fastapiIcon from '../assets/technologies/fastapi-logo.webp';
 import './Projects.css';
+
+import recircular1 from '../assets/projects/recircular1.png';
+import recircular2 from '../assets/projects/recircular2.png';
+import recircular3 from '../assets/projects/recircular3.png';
+import parkhub1 from '../assets/projects/parkhub1.png';
+import parkhub2 from '../assets/projects/parkhub2.png';
+import parkhub3 from '../assets/projects/parkhub3.png';
+import parkhub4 from '../assets/projects/parkhub4.png';
 
 function Projects() {
   const carouselRef = useRef(null);
@@ -55,7 +60,7 @@ function Projects() {
             <ProjectCard
               title="Parkhub"
               description="Is a parking reservation project that allows users to register, log in, change password, make a reservation and view reservation history."
-              images={[recircular2]}
+              images={[parkhub1, parkhub2, parkhub3, parkhub4]}
               technologies={[
                 { name: 'React', icon: reactIcon },
                 { name: 'FastAPI', icon: fastapiIcon },
