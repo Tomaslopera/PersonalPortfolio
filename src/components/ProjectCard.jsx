@@ -1,11 +1,13 @@
+// ProjectCard.jsx
 import React, { useState } from 'react';
 import './ProjectCard.css';
 
 function ProjectCard({
   title,
-  description = '',        // <- default string
-  images = [],             // <- default array
-  technologies = [],       // <- default array
+  description = '',
+  role = '',                 // <— NUEVO
+  images = [],
+  technologies = [],
   repoLink
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,22 +18,20 @@ function ProjectCard({
 
   const prevImage = () => setCurrentIndex(p => (p === 0 ? validImages.length - 1 : p - 1));
   const nextImage = () => setCurrentIndex(p => (p === validImages.length - 1 ? 0 : p + 1));
-  const lines = Array.isArray(description)
-    ? description
-    : String(description).split(/\n+/).filter(Boolean);
 
   return (
     <div className="project-card">
       <h2>{title}</h2>
 
-      {lines.map((line, idx) => (
-        <p
-          key={idx}
-          className={`project-desc ${idx > 0 ? 'role' : ''}`}
-        >
-          {line}
+      {/* tu diseño actual para la descripción */}
+      <p className="project-desc">{description}</p>
+
+      {/* sección Rol (opcional) */}
+      {role && (
+        <p className="project-role">
+          <span className="project-role-label">Rol:</span> {role}
         </p>
-      ))}
+      )}
 
       {hasImages && (
         <div className="image-container">

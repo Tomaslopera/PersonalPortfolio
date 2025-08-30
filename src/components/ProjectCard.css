@@ -172,3 +172,17 @@
   font-weight: 600;
 }
 
+.project-card .project-role {
+  margin: 0 0 0.75rem 0;     /* separación antes de la imagen */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c9c9c9;            /* un poco más tenue que #ddd */
+  text-align: center;
+  word-break: break-word;
+}
+
+.project-card .project-role-label {
+  color: #ffffff;            /* acento morado */
+  font-weight: 600;
+}
+

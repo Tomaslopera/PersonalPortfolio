@@ -1,12 +1,9 @@
 import React, { useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import background from '../assets/background.jpg';
-import reactIcon from '../assets/technologies/react-logo.svg';
-import pythonIcon from '../assets/technologies/python-logo.svg';
-import sqlIcon from '../assets/technologies/sql-logo.png';
-import fastapiIcon from '../assets/technologies/fastapi-logo.webp';
 import './Projects.css';
 
+// IMAGENES PROYECTOS
 import recircular1 from '../assets/projects/recircular1.png';
 import recircular2 from '../assets/projects/recircular2.png';
 import recircular3 from '../assets/projects/recircular3.png';
@@ -14,6 +11,10 @@ import parkhub1 from '../assets/projects/parkhub1.png';
 import parkhub2 from '../assets/projects/parkhub2.png';
 import parkhub3 from '../assets/projects/parkhub3.png';
 import parkhub4 from '../assets/projects/parkhub4.png';
+import powerbi1 from '../assets/projects/powerbi1.png';
+import powerbi2 from '../assets/projects/powerbi2.png';
+import powerbi3 from '../assets/projects/powerbi3.png';
+import powerbi4 from '../assets/projects/powerbi4.png';
 
 function Projects() {
   const carouselRef = useRef(null);
@@ -44,62 +45,59 @@ function Projects() {
         <div className="projects-carousel" ref={carouselRef}>
           <div className="project-slide">
             <ProjectCard
+              title="Clustering Case | Financial Customer Segmentation"
+              description="Segmentation of a financial institution's customers to promote the adoption of a second card; validation of the 4-cluster hypothesis"
+              role="Cleaning/imputation and scaling | I applied K-Means/DBSCAN/Hierarchical/GMM, evaluated with Silhouette, and performed cluster profiling for marketing actions"
+              technologies={["Python", "Jupyter", "Pandas", "Matplotlib", "Seaborn", "SciKit-Learn"]}
+              repoLink="https://github.com/Tomaslopera/CasoAgrupamiento"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
+              title="Classification Case | Intrusion Detection"
+              description="Binary classification for intrusion detection in transactions (Normal vs Attack), with an F1 score ≥ 80% and minimal false negatives"
+              role="EDA and preprocessing | pipeline MinMaxScaler + OneHotEncoder | trained and compared LR/Tree/RF/SVM/Gradient Boosting with cross-validation and threshold adjustment to reduce false negatives"
+              technologies={["Python", "Jupyter", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn"]}
+              repoLink="https://github.com/Tomaslopera/CasoClasificacion"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
+              title="Genetic Algorithm | Financial Portfolios"
+              description="Financial portfolio optimizer that maximizes returns and minimizes risk using genetic algorithms"
+              role="I implemented GA (fitness, crossover, mutation, penalties) and data pipeline (yfinance)"
+              technologies={["Python", "Jupyter", "YFinance", "Numpy", "Matplotlib", "Seaborn"]}
+              repoLink="https://github.com/Tomaslopera/GeneticAlgorithm_FinancialPortfolio"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
+              title="Power BI Projects"
+              description="Collection of dashboards in Power BI to solve business cases (Video game sales, Global indicators, HR, and Personal finance)"
+              role="Power Query (cleaning and integration), DAX measures, KPIs, maps, and navigation"
+              images={[powerbi1, powerbi2, powerbi3, powerbi4]}
+              technologies={["Power BI", "DAX", "Power Query"]}
+              repoLink="https://github.com/Tomaslopera/PowerBI_Projects"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
               title="Recircular"
-              description={
-                "Marketplace de economía circular para publicar, comprar, vender y reutilizar materiales y productos.\n" +
-                "\nRol: Backend | diseñé el esquema relacional y desarrollé la API REST (FastAPI, MySQL) para autenticación, publicaciones y órdenes."
-              }
-
+              description="Circular economy marketplace for posting, buying, selling, and reusing materials and products"
+              role="I designed the relational schema and developed the REST API (FastAPI, MySQL) for authentication, publications, and orders."
               images={[recircular1, recircular2, recircular3]}
-              technologies={[
-                { name: 'React', icon: reactIcon },
-                { name: 'FastAPI', icon: fastapiIcon },
-                { name: 'SQL', icon: sqlIcon },
-              ]}
+              technologies={["React", "FastAPI", "MySQL"]}
               repoLink="https://github.com/Tomaslopera/Recircular"
             />
           </div>
-
           <div className="project-slide">
             <ProjectCard
               title="Parkhub"
-              description={
-                "Aplicación de reservas de parqueaderos con registro/login, cambio de contraseña, reservas e historial.\n" + "\n" +
-                "Rol: Backend | construí la API REST y el modelo de datos (FastAPI, MySQL) para usuarios, reservas y reportes."
-              }
-
+              description="Parking space reservation application with registration/login, password change, reservations, and history"
+              role="I built the REST API and data model (FastAPI, MySQL) for users, reservations, and reports."
               images={[parkhub1, parkhub2, parkhub3, parkhub4]}
-              technologies={[
-                { name: 'React', icon: reactIcon },
-                { name: 'FastAPI', icon: fastapiIcon },
-                { name: 'SQL', icon: sqlIcon },
-              ]}
+              technologies={["React", "FastAPI", "MySQL"]}
               repoLink="https://github.com/Tomaslopera/ParkHub"
-            />
-          </div>
-          <div className="project-slide">
-            <ProjectCard
-              title="AI Injury Predictor"
-              description={
-                "Aplicación de reservas de parqueaderos con registro/login, cambio de contraseña, reservas e historial.\n" +
-                "Rol: Backend | construí la API REST y el modelo de datos (FastAPI, MySQL) para usuarios, reservas y reportes."
-              }
-              technologies={['Python', 'Scikit-learn']}
-              repoLink="#"
-            />
-          </div>
-          <div className="project-slide">
-            <ProjectCard
-              title="AI Injury Predictor"
-              description={
-                "Aplicación de reservas de parqueaderos con registro/login, cambio de contraseña, reservas e historial.\n" +
-                "Rol: Backend | construí la API REST y el modelo de datos (FastAPI, MySQL) para usuarios, reservas y reportes."
-              }
-              technologies={[
-                {name: 'Python', icon: pythonIcon},
-                {name: 'Scikit-learn'}
-              ]}
-              repoLink="#"
             />
           </div>
         </div>
