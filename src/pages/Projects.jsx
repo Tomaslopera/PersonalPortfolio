@@ -82,7 +82,7 @@ function Projects() {
           </div>
           <div className="project-slide">
             <ProjectCard
-              title="Recircular"
+              title="Recircularrrrrrrrrrrrr"
               description="Circular economy marketplace for posting, buying, selling, and reusing materials and products"
               role="I designed the relational schema and developed the REST API (FastAPI, MySQL) for authentication, publications, and orders."
               images={[recircular1, recircular2, recircular3]}
