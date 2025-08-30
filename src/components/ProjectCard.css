@@ -136,3 +136,39 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.tech-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* texto base del card, puedes dejarlo como está */
+.project-card p {
+  text-align: left;        /* mejor lectura */
+  line-height: 1.6;
+  margin: 0 0 .5rem 0;
+}
+
+.project-card .project-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd;          /* mismo tono que tenías en la lista */
+  text-align: center;     /* por si quieres forzar alineación */
+  word-break: break-word; /* menos blanco */
+}
+
+/* línea 2 (rol/aporte) */
+.project-card .project-desc.role {
+  color: rgba(255, 255, 255, 0.75); /* aún más tenue */
+}
+
+/* si quieres resaltar la palabra "Rol:" cuando la incluyas en texto */
+.project-card .project-desc.role em {
+  color: #a78bfa;                   /* acento morado */
+  font-style: normal;
+  font-weight: 600;
+}
+

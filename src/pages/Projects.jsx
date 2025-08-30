@@ -45,7 +45,11 @@ function Projects() {
           <div className="project-slide">
             <ProjectCard
               title="Recircular"
-              description="In the current context, the circular economy has become a priority for many companies and organizations seeking to reduce environmental impact and promote sustainability. In this sense, the idea of ​​developing a Marketplace-type website project with a focus on the circular economy is proposed."
+              description={
+                "Marketplace de economía circular para publicar, comprar, vender y reutilizar materiales y productos.\n" +
+                "\nRol: Backend | diseñé el esquema relacional y desarrollé la API REST (FastAPI, MySQL) para autenticación, publicaciones y órdenes."
+              }
+
               images={[recircular1, recircular2, recircular3]}
               technologies={[
                 { name: 'React', icon: reactIcon },
@@ -59,7 +63,11 @@ function Projects() {
           <div className="project-slide">
             <ProjectCard
               title="Parkhub"
-              description="Is a parking reservation project that allows users to register, log in, change password, make a reservation and view reservation history."
+              description={
+                "Aplicación de reservas de parqueaderos con registro/login, cambio de contraseña, reservas e historial.\n" + "\n" +
+                "Rol: Backend | construí la API REST y el modelo de datos (FastAPI, MySQL) para usuarios, reservas y reportes."
+              }
+
               images={[parkhub1, parkhub2, parkhub3, parkhub4]}
               technologies={[
                 { name: 'React', icon: reactIcon },
@@ -69,13 +77,28 @@ function Projects() {
               repoLink="https://github.com/Tomaslopera/ParkHub"
             />
           </div>
-
           <div className="project-slide">
             <ProjectCard
               title="AI Injury Predictor"
-              description="An AI model to detect injury risks for runners."
-              images={[recircular3]}
+              description={
+                "Aplicación de reservas de parqueaderos con registro/login, cambio de contraseña, reservas e historial.\n" +
+                "Rol: Backend | construí la API REST y el modelo de datos (FastAPI, MySQL) para usuarios, reservas y reportes."
+              }
               technologies={['Python', 'Scikit-learn']}
+              repoLink="#"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
+              title="AI Injury Predictor"
+              description={
+                "Aplicación de reservas de parqueaderos con registro/login, cambio de contraseña, reservas e historial.\n" +
+                "Rol: Backend | construí la API REST y el modelo de datos (FastAPI, MySQL) para usuarios, reservas y reportes."
+              }
+              technologies={[
+                {name: 'Python', icon: pythonIcon},
+                {name: 'Scikit-learn'}
+              ]}
               repoLink="#"
             />
           </div>
