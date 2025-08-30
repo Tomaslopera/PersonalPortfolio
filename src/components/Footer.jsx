@@ -19,7 +19,7 @@ function Footer() {
       <a href="https://www.linkedin.com/in/tomaslopera/" target="_blank" rel="noopener noreferrer">
         <img src={linkedinIcon} alt="LinkedIn" />
       </a>
-      <a href="mailto:tomaslopera@example.com">
+      <a href="mailto:loperatomas410@gmail.com">
         <img src={emailIcon} alt="Email" />
       </a>
     </div>
