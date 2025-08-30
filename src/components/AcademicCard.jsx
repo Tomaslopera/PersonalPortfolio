@@ -8,11 +8,11 @@ function AcademicCard({ title, organization, dateRange, details, repoLink }) {
       <h3>{organization}</h3>
       <p className="date-range">{dateRange}</p>
 
-      <ul className="details-list">
-        {details.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <div className="card-details">
+        <p>
+          {Array.isArray(details) ? details.join(' ') : details}
+        </p>
+      </div>
 
       {repoLink && (
         <a

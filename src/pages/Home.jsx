@@ -12,12 +12,23 @@ function Home() {
         <div className="about-me">
           <h2></h2>
           <p>
-            I am a Software and Computer Engineering student at Universidad EIA, interested in Data Engineering, Data Science and Data Analysis. I have worked on projects where I apply data processing and analysis, SQL database management, backend development and agile methodologies (Scrum). I am currently deepening my knowledge in data engineering and cloud technologies (AWS).
+            I am a Systems and Computer Engineering student at EIA University, expecting to
+            graduate in 2026-2. My main focus is Data Engineering, Data Science, and AI. I am
+            specializing in transforming data into value through ingestion, exploration,
+            preparation/transformation, and analysis/modeling processes. I have developed
+            ETL/ELT processes, dimensional modeling, and feature engineering flows to train and
+            evaluate ML models. I have also implemented RAG agents that combine retrieval in
+            vector databases with response generation. I am currently delving deeper into data
+            engineering, data science, and generative AI.
           </p>
           <p>
-            Soy estudiante de Ingeniería de Sistemas y Computación en la Universidad EIA, con interés en Data Engineering, Data Science y Data Analysis. He trabajado en proyectos donde aplico procesamiento y análisis de datos, manejo de bases de datos SQL, desarrollo backend y metodologías ágiles (Scrum). Actualmente, profundizo mis conocimientos en ingeniería de datos y tecnologías en la nube (AWS).
+            Soy estudiante de Ingeniería de Sistemas y Computación en la Universidad EIA con expectativas de Grado en 2026-2. Mi enfoque principal es la Ingeniería de Datos, Ciencia de Datos e IA. Me estoy especializando en la transformación de datos en valor mediante procesos de ingestión, exploración, preparación/transformación, análisis/modelado. He desarrollado procesos ETL/ELT, modelado dimensional y flujos de ingeniería de características para entrenar y evaluar modelos de ML. También, he implementado agentes RAG que combinan la recuperación en bases de datos vectoriales con la generación de respuestas. Actualmente estoy profundizando en ingeniería de datos, ciencia de datos e IA generativa.
           </p>
           <br />
+          <h2>Technologies</h2>
+          <p>
+            Java, Python, pandas, NumPy, scikit-learn, matplotlib, seaborn, SQL, FastAPI, Streamlit, n8n, OpenAI API, AWS, Git/GitHub, Power BI.
+          </p>
         </div>
         <img src={foto} alt="Tomás Lopera" className="profile-pic" />
       </div>

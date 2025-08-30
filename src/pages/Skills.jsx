@@ -34,15 +34,14 @@ function Skills() {
           <div className="divider"></div>
           <div className="skills-block">
             <h2>Technical</h2>
-            <Skill name="Python" level={4} />
-            <Skill name="SQL" level={4} />
-            <Skill name="Pandas" level={4} />
-            <Skill name="FastAPI" level={4} />
-            <Skill name="AWS" level={3} />
-            <Skill name="Git" level={4} />
-            <Skill name="Scrum" level={3} />
-            <Skill name="PowerBI" level={3} />
-            <Skill name="Excel" level={4} />
+            <Skill name="Exploratory Data Analysis" level={4} />
+            <Skill name="Data Preparation & Transformation" level={4} />
+            <Skill name="ETL/ELT" level={4} />
+            <Skill name="ML Models" level={4} />
+            <Skill name="Generative AI (Agents)" level={3} />
+            <Skill name="SQL Databases" level={4} />
+            <Skill name="Agile Project Management" level={3} />
+            <Skill name="Version Control" level={4} />
           </div>
         </div>
       </div>

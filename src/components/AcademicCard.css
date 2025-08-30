@@ -37,11 +37,18 @@
   margin-bottom: 1rem;
 }
 
-.details-list {
-  list-style: disc;
-  padding-left: 1.5rem;
+.card-details {
+  width: 100%;          /* evita que se “encoja” por el align-items:center */
+  margin-top: 0.75rem;
+}
+
+.card-details p {
+  margin: 0;
+  font-size: 0.95rem;
   line-height: 1.6;
-  color: #ddd;
+  color: #ddd;          /* mismo tono que tenías en la lista */
+  text-align: center;     /* por si quieres forzar alineación */
+  word-break: break-word;
 }
 
 .btn-repo {
