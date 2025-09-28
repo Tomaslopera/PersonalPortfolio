@@ -63,6 +63,15 @@ function Projects() {
           </div>
           <div className="project-slide">
             <ProjectCard
+              title="Regression Case | Insurance Premium Prediction"
+              description="Prediction of insurance premiums based on demographic and lifestyle data, aiming for MAPE ≤ 15%"
+              role="EDA | feature engineering | preprocessing (scaling/encoding) | model training and evaluation with metrics (R², MAE, RMSE, MAPE)"
+              technologies={["Python", "Jupyter", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn"]}
+              repoLink="https://github.com/Tomaslopera/CasoRegresion"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
               title="Genetic Algorithm | Financial Portfolios"
               description="Financial portfolio optimizer that maximizes returns and minimizes risk using genetic algorithms"
               role="I implemented GA (fitness, crossover, mutation, penalties) and data pipeline (yfinance)"
