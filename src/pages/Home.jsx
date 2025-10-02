@@ -27,7 +27,7 @@ function Home() {
           <br />
           <h2>Technologies</h2>
           <p>
-            Java, Python, pandas, NumPy, scikit-learn, matplotlib, seaborn, SQL, FastAPI, Streamlit, n8n, OpenAI API, AWS, Git/GitHub, Power BI.
+            Java, Python, pandas, NumPy, scikit-learn, matplotlib, seaborn, SQL, FastAPI, Streamlit, n8n, OpenAI API, AWS, Git/GitHub, Power BI, PySpark, Databricks, Langchain
           </p>
         </div>
         <img src={foto} alt="Tomás Lopera" className="profile-pic" />

@@ -15,6 +15,10 @@ import powerbi1 from '../assets/projects/powerbi1.png';
 import powerbi2 from '../assets/projects/powerbi2.png';
 import powerbi3 from '../assets/projects/powerbi3.png';
 import powerbi4 from '../assets/projects/powerbi4.png';
+import coingecko1 from '../assets/projects/coingecko1.png';
+import coingecko2 from '../assets/projects/coingecko2.png';
+import coingecko3 from '../assets/projects/coingecko3.png';
+import coingecko4 from '../assets/projects/coingecko4.png';
 
 function Projects() {
   const carouselRef = useRef(null);
@@ -77,6 +81,16 @@ function Projects() {
               role="I implemented GA (fitness, crossover, mutation, penalties) and data pipeline (yfinance)"
               technologies={["Python", "Jupyter", "YFinance", "Numpy", "Matplotlib", "Seaborn"]}
               repoLink="https://github.com/Tomaslopera/GeneticAlgorithm_FinancialPortfolio"
+            />
+          </div>
+          <div className="project-slide">
+            <ProjectCard
+            title="ETL/ELT CoinGecko | Prefect"
+            description="Implementation of an ETL/ELT flow using Prefect to extract data from CoinGecko's public API, transform it with pandas, and persist it in Parquet in S3 and/or in staging/bronze/silver layers in PostgreSQL with RDS"
+            role={`ETL/ELT flow with Prefect using decorators and custom tasks, Creation of AWS resources (S3 bucket, RDS instance)`}
+            technologies={["Prefect", "Python", "Pandas", "Boto3", "PyArrow", "PostgreSQL", "Amazon S3"]}
+            images={[coingecko1, coingecko2, coingecko3, coingecko4]}
+            repoLink="https://github.com/Tomaslopera/ETL-ELT_CoinGecko"
             />
           </div>
           <div className="project-slide">
