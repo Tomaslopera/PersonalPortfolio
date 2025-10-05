@@ -42,7 +42,7 @@ function Navbar() {
           <Link to="/" onClick={closeMenu} className="nav-item">About Me</Link>
           <Link to="/skills" onClick={closeMenu} className="nav-item">Skills</Link>
           <Link to="/projects" onClick={closeMenu} className="nav-item">Projects</Link>
-          <Link to="/education" className="nav-item">Education</Link>
+          <Link to="/education" onClick={closeMenu} className="nav-item">Education</Link>
         </div>
       </aside>
 
