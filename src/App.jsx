@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
-import Academic from './pages/Academic';
 import Education from "./pages/Education";
 
 function App() {
