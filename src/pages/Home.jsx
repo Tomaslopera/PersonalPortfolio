@@ -1,39 +1,75 @@
-import React from 'react';
-import './Home.css';
-import foto from '../assets/about-photo.jpg';
-import background from '../assets/background.jpg';
+import React from "react";
+import "./Home.css";
+import foto from "../assets/about-photo.jpg";
+import background from "../assets/background1.jpeg";
 
-function Home() {
+export default function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${background})` }}>
       <div className="home-content">
+        <img src={foto} alt="Tomás Lopera" className="profile-pic" />
+
         <h1>Tomás Lopera Duque</h1>
         <h2>Software and Computer Engineering Student at Universidad EIA</h2>
-        <div className="about-me">
-          <h2></h2>
+
+        <section id="about" className="about-me">
           <p>
-            I am a Systems and Computer Engineering student at EIA University, expecting to
-            graduate in 2026-2. My main focus is Data Engineering, Data Science, and AI. I am
-            specializing in transforming data into value through ingestion, exploration,
-            preparation/transformation, and analysis/modeling processes. I have developed
-            ETL/ELT processes, dimensional modeling, and feature engineering flows to train and
-            evaluate ML models. I have also implemented RAG agents that combine retrieval in
-            vector databases with response generation. I am currently delving deeper into data
-            engineering, data science, and generative AI.
+            I am a Software and Computer Engineering student at EIA University,
+            expecting to graduate in 2026-2. My main focus is Data Engineering,
+            Data Science, and AI. I specialize in transforming data into value
+            through ingestion, exploration, preparation/transformation, and
+            analysis/modeling. I have developed ETL/ELT processes, dimensional
+            modeling, and feature engineering flows to train and evaluate ML
+            models. I’ve also implemented RAG agents that combine retrieval in
+            vector databases with response generation.
           </p>
-          <p>
-            Soy estudiante de Ingeniería de Sistemas y Computación en la Universidad EIA con expectativas de Grado en 2026-2. Mi enfoque principal es la Ingeniería de Datos, Ciencia de Datos e IA. Me estoy especializando en la transformación de datos en valor mediante procesos de ingestión, exploración, preparación/transformación, análisis/modelado. He desarrollado procesos ETL/ELT, modelado dimensional y flujos de ingeniería de características para entrenar y evaluar modelos de ML. También, he implementado agentes RAG que combinan la recuperación en bases de datos vectoriales con la generación de respuestas. Actualmente estoy profundizando en ingeniería de datos, ciencia de datos e IA generativa.
-          </p>
-          <br />
-          <h2>Technologies</h2>
-          <p>
-            Java, Python, pandas, NumPy, scikit-learn, matplotlib, seaborn, SQL, FastAPI, Streamlit, n8n, OpenAI API, AWS, Git/GitHub, Power BI, PySpark, Databricks, Langchain
-          </p>
-        </div>
-        <img src={foto} alt="Tomás Lopera" className="profile-pic" />
+        </section>
+
+        {/* Technologies */}
+        <section id="skills" className="panel">
+          <h3>Technologies</h3>
+
+          <h4>Languages & Core</h4>
+          <div className="chips">
+            <span className="chip">Java</span>
+            <span className="chip">Python</span>
+            <span className="chip">SQL</span>
+            <span className="chip">Git/GitHub</span>
+            <span className="chip">Bash</span>
+          </div>
+
+          <h4>Data & ML</h4>
+          <div className="chips">
+            <span className="chip">pandas</span>
+            <span className="chip">NumPy</span>
+            <span className="chip">scikit-learn</span>
+            <span className="chip">matplotlib</span>
+            <span className="chip">seaborn</span>
+            <span className="chip">PySpark</span>
+            <span className="chip">Databricks</span>
+            <span className="chip">Power BI</span>
+            <span className="chip">n8n</span>
+            <span className="chip">Prefect</span>
+          </div>
+
+          <h4>AI</h4>
+          <div className="chips">
+            <span className="chip">PyTorch</span>
+            <span className="chip">LangChain</span>
+            <span className="chip">OpenAI API</span>
+          </div>
+
+          <h4>AWS</h4>
+          <div className="chips">
+            <span className="chip">S3</span>
+            <span className="chip">Lambda</span>
+            <span className="chip">IAM</span>
+            <span className="chip">RDS</span>
+            <span className="chip">Textract</span>
+            <span className="chip">Rekognition</span>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
-
-export default Home;

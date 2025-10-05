@@ -1,0 +1,106 @@
+:root{
+  --glass: rgba(255,255,255,.08);
+  --ring: rgba(255,255,255,.14);
+  --muted: #cfcfcf;
+}
+
+.edu-section{
+  min-height:100vh;
+  padding: 100px 20px 60px;
+  background-size:cover; background-position:center;
+  background-attachment: fixed;
+  position:relative; color:#fff;
+}
+.edu-section::before{ content:""; position:absolute; inset:0; z-index:0; }
+.edu-title{
+  position:relative; z-index:1;
+  text-align:center; font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 1rem;
+}
+.panel{ position:relative; z-index:1; margin: 1.2rem auto 0; max-width: 1200px; }
+.sec-title{ text-align:center; margin: .25rem 0 .75rem; }
+
+/* Educación */
+.edu-grid{
+  display:grid; gap:.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+}
+.edu-card{
+  background: var(--glass); backdrop-filter: blur(10px);
+  border:1px solid var(--ring); border-radius:16px; padding:1rem;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.edu-card:hover{ transform: translateY(-2px); background: rgba(255,255,255,.1); }
+.edu-card h3{ margin:.1rem 0 .2rem; }
+.muted{ color: var(--muted); margin:0 0 .4rem; }
+.pill{
+  display:inline-block; font-size:.85rem; color:#fff;
+  border:1px solid var(--ring); border-radius:999px;
+  padding:.18rem .55rem; background: rgba(255,255,255,.06); margin-bottom:.4rem;
+}
+.desc{ color: var(--muted); margin:0; }
+
+/* Chips */
+.chip-row{ display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; }
+.chip{
+  border:1px solid var(--ring); background: rgba(255,255,255,.06);
+  border-radius:999px; padding:.45rem .7rem; color:#fff;
+}
+.chip.small{ padding:.25rem .5rem; font-size:.85rem; }
+
+/* Certificaciones */
+.cert-grid{
+  display:grid; gap:.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+}
+.cert-card{
+  background: var(--glass); backdrop-filter: blur(10px);
+  border:1px solid var(--ring); border-radius:16px; padding:1rem;
+  transition: transform .18s ease, background .18s ease;
+}
+.cert-card:hover{ transform: translateY(-2px); background: rgba(255,255,255,.1); }
+.cert-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
+.badge{
+  border:1px solid var(--ring); background: rgba(255,255,255,.06);
+  border-radius:10px; padding:.2rem .5rem; font-size:.85rem;
+}
+.date{ color: var(--muted); font-size:.85rem; }
+.cert-name{ margin:.1rem 0 .4rem; }
+
+/* Academic Experience como grid (sin carrusel) */
+.exp-grid{
+  display:grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+
+/* Re-usa estilos de AcademicCard: se verá como tus tarjetas glass actuales */
+
+/* Responsive */
+@media (max-width: 820px){
+  .edu-section{ background-attachment: scroll; }
+}
+
+/* --- Botón "View Credential" / "Open" / "Verify" con estilo glass --- */
+.cert-btn {
+  display: block;              /* <- clave para que el auto centre */
+  width: fit-content;          /* se ajusta al texto */
+  margin: 0.8rem auto 0;       /* centrado horizontal */
+  padding: 0.35rem 0.9rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all .25s ease;
+}
+.cert-btn:hover { background: rgba(255,255,255,0.25); transform: scale(1.05); color:#fff; }
+.cert-btn:active,
+.cert-btn:focus,
+.cert-btn:visited { color:#fff; outline:none; }
+
+@media (max-width: 820px){
+  .edu-section{ background-attachment: scroll; }
+}

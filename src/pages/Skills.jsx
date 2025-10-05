@@ -1,6 +1,6 @@
 import React from 'react';
 import './Skills.css';
-import background from '../assets/background.jpg'; 
+import background from '../assets/background1.jpeg'; 
 
 const Skill = ({ name, level }) => {
   const percentage = (level / 5) * 100;

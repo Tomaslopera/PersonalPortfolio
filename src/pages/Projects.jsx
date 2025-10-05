@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import background from '../assets/background.jpg';
+import background from '../assets/background1.jpeg';
 import './Projects.css';
 
 // IMAGENES PROYECTOS
