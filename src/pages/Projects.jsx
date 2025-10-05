@@ -15,10 +15,10 @@ import powerbi1 from '../assets/projects/powerbi1.png';
 import powerbi2 from '../assets/projects/powerbi2.png';
 import powerbi3 from '../assets/projects/powerbi3.png';
 import powerbi4 from '../assets/projects/powerbi4.png';
-import coingecko1 from '../assets/projects/coingecko1.png';
-import coingecko2 from '../assets/projects/coingecko2.png';
-import coingecko3 from '../assets/projects/coingecko3.png';
-import coingecko4 from '../assets/projects/coingecko4.png';
+import coingecko1 from '../assets/projects/CoinGecko1.png';
+import coingecko2 from '../assets/projects/CoinGecko2.png';
+import coingecko3 from '../assets/projects/CoinGecko3.png';
+import coingecko4 from '../assets/projects/CoinGecko4.png';
 
 function Projects() {
   const carouselRef = useRef(null);
