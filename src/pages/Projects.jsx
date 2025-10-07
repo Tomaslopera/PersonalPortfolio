@@ -47,6 +47,14 @@ export default function Projects() {
         />
 
         <ProjectCard
+          title="Classification Case | Telco Customer Churn"
+          description="Binary classification model to predict customer churn in a telecommunications company, identifying high-risk customers for retention strategies"
+          role="EDA | preprocessing (IterativeImputer + OrdinalEncoder) | feature selection with SHAP, and model comparison (Logistic Regression, KNN, Decision Tree, Random Forest) | achieved accuracy ≈ 0.84 with robust pipeline and no data leakage"
+          technologies={["Python", "Jupyter", "Pandas", "Matplotlib", "Scikit-Learn", "SHAP"]}
+          repoLink="https://github.com/Tomaslopera/Telco_Classification"
+        />
+
+        <ProjectCard
           title="Regression Case | Insurance Premium Prediction"
           description="Prediction of insurance premiums based on demographic and lifestyle data, aiming for MAPE ≤ 15%"
           role="EDA | feature engineering | preprocessing (scaling/encoding) | model training and evaluation with metrics (R², MAE, RMSE, MAPE)"
