@@ -75,8 +75,9 @@ const ACADEMIC_EXPERIENCES = [
     organization: "EIA University - Cadena SA",
     dateRange: "06/2025 – 10-11/2025 (4-5 months)",
     details: [
-      "I have been working on the construction of a workflow that extracts, validates and highlights key information form technical data sheets based on images using OCR with AWS, image recognition and deployment with Streamlit",
+      "I worked on the construction of a workflow that extracts, validates and highlights key information from technical data sheets based on images using OCR with AWS, image recognition with OpenCV and deployment with Streamlit. The solution was presented to the client Cadena SA, it includes a Scientific Documentation that supports the development of the project",
     ],
+    repoLink: "https://github.com/Tomaslopera/Reto_Cadena"
   },
   {
     title: "Sistecredito University Project | Generative AI",
