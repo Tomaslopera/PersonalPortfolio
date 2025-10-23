@@ -19,6 +19,9 @@ import coingecko1 from "../assets/projects/CoinGecko1.png";
 import coingecko2 from "../assets/projects/CoinGecko2.png";
 import coingecko3 from "../assets/projects/CoinGecko3.png";
 import coingecko4 from "../assets/projects/CoinGecko4.png";
+import olist1 from "../assets/projects/olist1.png";
+import olist2 from "../assets/projects/olist2.png";
+import olist3 from "../assets/projects/olist3.jpeg";
 
 export default function Projects() {
   return (
@@ -30,6 +33,33 @@ export default function Projects() {
 
       {/* GRID VERTICAL / RESPONSIVE */}
       <div className="projects-grid">
+
+        <ProjectCard
+          title="ETL/ELT CoinGecko | Prefect"
+          description="Implementation of an ETL/ELT flow using Prefect to extract data from CoinGecko's public API, transform it with pandas, and persist it in Parquet in S3 and/or Postgres (RDS)"
+          role="Prefect decorators & custom tasks; AWS resources (S3, RDS)"
+          technologies={["Prefect", "Python", "Pandas", "Boto3", "PyArrow", "PostgreSQL", "Amazon S3"]}
+          images={[coingecko1, coingecko2, coingecko3, coingecko4]}
+          repoLink="https://github.com/Tomaslopera/ETL-ELT_CoinGecko"
+        />
+
+        <ProjectCard
+          title="Olist Data Pipeline | AWS ETL + Data Warehouse + BI"
+          description="End-to-end data pipeline for the Olist dataset using AWS services and Prefect. Automates ETL flow from PostgreSQL (RDS) to S3 (staging zone), integrates with Redshift Serverless via Glue Data Catalog, and connects the Data Warehouse to BI tools such as Power BI."
+          role="Design & implementation of ETL flow, AWS orchestration (RDS, EC2, S3, Glue, Redshift), automation with Prefect & crontab, BI integration"
+          technologies={["Python", "Prefect", "PostgreSQL (RDS)", "Amazon S3", "AWS Glue", "Redshift Serverless", "Power BI", "Pandas", "Boto3"]}
+          images={[olist1, olist2, olist3]}
+          repoLink="https://github.com/Tomaslopera/E_Commerce_DW"
+        />
+
+        <ProjectCard
+          title="Classification Case | Telco Customer Churn"
+          description="Binary classification model to predict customer churn in a telecommunications company, identifying high-risk customers for retention strategies"
+          role="EDA | preprocessing (IterativeImputer + OrdinalEncoder) | feature selection with SHAP, and model comparison (Logistic Regression, KNN, Decision Tree, Random Forest) | achieved accuracy ≈ 0.84 with robust pipeline and no data leakage"
+          technologies={["Python", "Jupyter", "Pandas", "Matplotlib", "Scikit-Learn", "SHAP"]}
+          repoLink="https://github.com/Tomaslopera/Telco_Classification"
+        />
+
         <ProjectCard
           title="Clustering Case | Financial Customer Segmentation"
           description="Segmentation of a financial institution's customers to promote the adoption of a second card; validation of the 4-cluster hypothesis"
@@ -47,14 +77,6 @@ export default function Projects() {
         />
 
         <ProjectCard
-          title="Classification Case | Telco Customer Churn"
-          description="Binary classification model to predict customer churn in a telecommunications company, identifying high-risk customers for retention strategies"
-          role="EDA | preprocessing (IterativeImputer + OrdinalEncoder) | feature selection with SHAP, and model comparison (Logistic Regression, KNN, Decision Tree, Random Forest) | achieved accuracy ≈ 0.84 with robust pipeline and no data leakage"
-          technologies={["Python", "Jupyter", "Pandas", "Matplotlib", "Scikit-Learn", "SHAP"]}
-          repoLink="https://github.com/Tomaslopera/Telco_Classification"
-        />
-
-        <ProjectCard
           title="Regression Case | Insurance Premium Prediction"
           description="Prediction of insurance premiums based on demographic and lifestyle data, aiming for MAPE ≤ 15%"
           role="EDA | feature engineering | preprocessing (scaling/encoding) | model training and evaluation with metrics (R², MAE, RMSE, MAPE)"
@@ -68,15 +90,6 @@ export default function Projects() {
           role="Implemented GA (fitness, crossover, mutation, penalties) and data pipeline (yfinance)"
           technologies={["Python", "Jupyter", "YFinance", "Numpy", "Matplotlib", "Seaborn"]}
           repoLink="https://github.com/Tomaslopera/GeneticAlgorithm_FinancialPortfolio"
-        />
-
-        <ProjectCard
-          title="ETL/ELT CoinGecko | Prefect"
-          description="Implementation of an ETL/ELT flow using Prefect to extract data from CoinGecko's public API, transform it with pandas, and persist it in Parquet in S3 and/or Postgres (RDS)"
-          role="Prefect decorators & custom tasks; AWS resources (S3, RDS)"
-          technologies={["Prefect", "Python", "Pandas", "Boto3", "PyArrow", "PostgreSQL", "Amazon S3"]}
-          images={[coingecko1, coingecko2, coingecko3, coingecko4]}
-          repoLink="https://github.com/Tomaslopera/ETL-ELT_CoinGecko"
         />
 
         <ProjectCard
