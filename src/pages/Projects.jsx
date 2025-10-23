@@ -3,26 +3,6 @@ import ProjectCard from "../components/ProjectCard";
 import background from "../assets/background1.jpeg";
 import "./Projects.css";
 
-// IMAGENES PROYECTOS
-import recircular1 from "../assets/projects/recircular1.png";
-import recircular2 from "../assets/projects/recircular2.png";
-import recircular3 from "../assets/projects/recircular3.png";
-import parkhub1 from "../assets/projects/parkhub1.png";
-import parkhub2 from "../assets/projects/parkhub2.png";
-import parkhub3 from "../assets/projects/parkhub3.png";
-import parkhub4 from "../assets/projects/parkhub4.png";
-import powerbi1 from "../assets/projects/powerbi1.png";
-import powerbi2 from "../assets/projects/powerbi2.png";
-import powerbi3 from "../assets/projects/powerbi3.png";
-import powerbi4 from "../assets/projects/powerbi4.png";
-import coingecko1 from "../assets/projects/CoinGecko1.png";
-import coingecko2 from "../assets/projects/CoinGecko2.png";
-import coingecko3 from "../assets/projects/CoinGecko3.png";
-import coingecko4 from "../assets/projects/CoinGecko4.png";
-import olist1 from "../assets/projects/olist1.png";
-import olist2 from "../assets/projects/olist2.png";
-import olist3 from "../assets/projects/olist3.jpeg";
-
 export default function Projects() {
   return (
     <section
@@ -37,19 +17,25 @@ export default function Projects() {
         <ProjectCard
           title="ETL/ELT CoinGecko | Prefect"
           description="Implementation of an ETL/ELT flow using Prefect to extract data from CoinGecko's public API, transform it with pandas, and persist it in Parquet in S3 and/or Postgres (RDS)"
-          role="Prefect decorators & custom tasks; AWS resources (S3, RDS)"
+          role="Prefect decorators & custom tasks, AWS resources (S3, RDS)"
           technologies={["Prefect", "Python", "Pandas", "Boto3", "PyArrow", "PostgreSQL", "Amazon S3"]}
-          images={[coingecko1, coingecko2, coingecko3, coingecko4]}
           repoLink="https://github.com/Tomaslopera/ETL-ELT_CoinGecko"
         />
 
         <ProjectCard
           title="Olist Data Pipeline | AWS ETL + Data Warehouse + BI"
-          description="End-to-end data pipeline for the Olist dataset using AWS services and Prefect. Automates ETL flow from PostgreSQL (RDS) to S3 (staging zone), integrates with Redshift Serverless via Glue Data Catalog, and connects the Data Warehouse to BI tools such as Power BI."
+          description="End-to-end data pipeline for the Olist dataset using AWS services and Prefect. Automates ETL flow from PostgreSQL (RDS) to S3 (staging zone), integrates with Redshift Serverless via Glue Data Catalog, and connects the Data Warehouse to PowerBI"
           role="Design & implementation of ETL flow, AWS orchestration (RDS, EC2, S3, Glue, Redshift), automation with Prefect & crontab, BI integration"
           technologies={["Python", "Prefect", "PostgreSQL (RDS)", "Amazon S3", "AWS Glue", "Redshift Serverless", "Power BI", "Pandas", "Boto3"]}
-          images={[olist1, olist2, olist3]}
           repoLink="https://github.com/Tomaslopera/E_Commerce_DW"
+        />
+
+        <ProjectCard
+          title="Books to Scrape | ETL Pipeline (Web Scraping + PostgreSQL)"
+          description="Automated ETL pipeline that extracts, transforms, and loads book data from Books to Scrape using Selenium and BeautifulSoup. The data is cleaned and normalized with Pandas and loaded into a PostgreSQL database using SQLAlchemy."
+          role="ETL design, Selenium web scraping, data modeling, PostgreSQL integration"
+          technologies={["Python", "Selenium", "BeautifulSoup", "Pandas", "SQLAlchemy", "PostgreSQL"]}
+          repoLink="https://github.com/Tomaslopera/BooksToScrape"
         />
 
         <ProjectCard
@@ -96,7 +82,6 @@ export default function Projects() {
           title="Power BI Projects"
           description="Collection of dashboards in Power BI to solve business cases (Video game sales, Global indicators, HR, and Personal finance)"
           role="Power Query (cleaning/integration), DAX, KPIs, maps, navigation"
-          images={[powerbi1, powerbi2, powerbi3, powerbi4]}
           technologies={["Power BI", "DAX", "Power Query"]}
           repoLink="https://github.com/Tomaslopera/PowerBI_Projects"
         />
@@ -105,7 +90,6 @@ export default function Projects() {
           title="Recircular"
           description="Circular economy marketplace for posting, buying, selling, and reusing materials and products"
           role="Relational schema & REST API (FastAPI, MySQL) for auth, publications and orders"
-          images={[recircular1, recircular2, recircular3]}
           technologies={["React", "FastAPI", "MySQL"]}
           repoLink="https://github.com/Tomaslopera/Recircular"
         />
@@ -114,7 +98,6 @@ export default function Projects() {
           title="Parkhub"
           description="Parking space reservation application with registration/login, password change, reservations, and history"
           role="REST API & data model (FastAPI, MySQL) for users, reservations and reports"
-          images={[parkhub1, parkhub2, parkhub3, parkhub4]}
           technologies={["React", "FastAPI", "MySQL"]}
           repoLink="https://github.com/Tomaslopera/ParkHub"
         />

@@ -28,7 +28,7 @@ function ProjectCard({
       {/* sección Rol (opcional) */}
       {role && (
         <p className="project-role">
-          <span className="project-role-label">Rol:</span> {role}
+          <span className="project-role-label">Role:</span> {role}
         </p>
       )}
 

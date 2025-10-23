@@ -86,7 +86,7 @@ const ACADEMIC_EXPERIENCES = [
     details: ["Through the subject Project 4, I am working on a project focused on Generative AI in a real production environment"],
   },
   {
-    title: "Innovation Hackathon participant",
+    title: "Innovation Hackathon Participant",
     organization: "ISA",
     dateRange: "05/2024",
     details: [
