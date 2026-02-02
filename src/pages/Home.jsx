@@ -3,6 +3,8 @@ import "./Home.css";
 import foto from "../assets/about-photo.jpg";
 import background from "../assets/background1.jpeg";
 
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${background})` }}>
@@ -10,18 +12,11 @@ export default function Home() {
         <img src={foto} alt="Tomás Lopera" className="profile-pic" />
 
         <h1>Tomás Lopera Duque</h1>
-        <h2>Software and Computer Engineering Student at Universidad EIA</h2>
+        <h2>Data & AI Intern @ Cadena | Software Engineering Student @ EIA University</h2>
 
         <section id="about" className="about-me">
           <p>
-            I am a Software and Computer Engineering student at EIA University,
-            expecting to graduate in 2026-2. My main focus is Data Engineering,
-            Data Science, and AI. I specialize in transforming data into value
-            through ingestion, exploration, preparation/transformation, and
-            analysis/modeling. I have developed ETL/ELT processes, dimensional
-            modeling, and feature engineering flows to train and evaluate ML
-            models. I’ve also implemented RAG agents that combine retrieval in
-            vector databases with response generation.
+            Data & AI Intern passionate about building scalable data solutions that support analytics and AI use cases. Experienced in SQL, Python, ETL/ELT pipelines and AWS cloud data services. Skilled in data manipulation, exploratory analysis, data modeling and foundational machine learning concepts. Continuously expanding expertise and knowledge in modern data engineering and cloud technologies to deliver reliable and efficient data workflows.
           </p>
         </section>
 
@@ -31,30 +26,33 @@ export default function Home() {
 
           <h4>Languages & Core</h4>
           <div className="chips">
-            <span className="chip">Java</span>
-            <span className="chip">Python</span>
             <span className="chip">SQL</span>
+            <span className="chip">Python</span>
             <span className="chip">Git/GitHub</span>
             <span className="chip">Bash</span>
+            <span className="chip">Java</span>
+            <span className="chip">Docker</span>
           </div>
 
-          <h4>Data & ML</h4>
+          <h4>Data Engineering</h4>
           <div className="chips">
             <span className="chip">pandas</span>
-            <span className="chip">NumPy</span>
+            <span className="chip">PySpark</span>
+            <span className="chip">AWS Orchestration</span>
+            <span className="chip">Databricks</span>
+            <span className="chip">dbt</span>            
+            <span className="chip">Prefect</span>
+            <span className="chip">Airflow</span>
+            <span className="chip">Power BI</span>
+          </div>
+
+          <h4>Data Science &AI</h4>
+          <div className="chips">
+            <span className="chip">pandas</span>
             <span className="chip">scikit-learn</span>
             <span className="chip">matplotlib</span>
             <span className="chip">seaborn</span>
-            <span className="chip">PySpark</span>
-            <span className="chip">Databricks</span>
-            <span className="chip">Power BI</span>
             <span className="chip">n8n</span>
-            <span className="chip">Prefect</span>
-          </div>
-
-          <h4>AI</h4>
-          <div className="chips">
-            <span className="chip">PyTorch</span>
             <span className="chip">LangChain</span>
             <span className="chip">OpenAI API</span>
           </div>
@@ -62,13 +60,22 @@ export default function Home() {
           <h4>AWS</h4>
           <div className="chips">
             <span className="chip">S3</span>
+            <span className="chip">EC2</span>
             <span className="chip">Lambda</span>
             <span className="chip">IAM</span>
             <span className="chip">RDS</span>
+            <span className="chip">Glue</span>
+            <span className="chip">Redshift</span>
+            <span className="chip">Athena</span>
+            <span className="chip">SageMaker</span>
             <span className="chip">Textract</span>
-            <span className="chip">Rekognition</span>
           </div>
         </section>
+        <div className="home-cta">
+          <Link to="/skills" className="skills-btn">
+            Skills
+          </Link>
+        </div>
       </div>
     </div>
   );

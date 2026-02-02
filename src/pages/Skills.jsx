@@ -2,16 +2,11 @@ import React from 'react';
 import './Skills.css';
 import background from '../assets/background1.jpeg'; 
 
-const Skill = ({ name, level }) => {
-  const percentage = (level / 5) * 100;
+const Skill = ({ name}) => {
 
   return (
     <div className="skill-item">
       <span className="skill-name">{name}</span>
-      <div className="skill-bar">
-        <div className="filled" style={{ width: `${percentage}%` }}></div>
-      </div>
-      <span className="skill-percent">{percentage}%</span>
     </div>
   );
 };
@@ -24,24 +19,27 @@ function Skills() {
         <div className="skills-subsections">
           <div className="skills-block">
             <h2>Professional</h2>
-            <Skill name="Communication" level={4} />
-            <Skill name="Teamwork" level={4} />
-            <Skill name="Problem Solving" level={4} />
-            <Skill name="Critical Thinking" level={4} />
-            <Skill name="Strategic Planning" level={4} />
-            <Skill name="Analytical Skills" level={4} />
+            <Skill name="Communication" />
+            <Skill name="Teamwork" />
+            <Skill name="Problem Solving" />
+            <Skill name="Critical Thinking" />
+            <Skill name="Strategic Planning" />
+            <Skill name="Analytical Skills" />
           </div>
           <div className="divider"></div>
           <div className="skills-block">
             <h2>Technical</h2>
-            <Skill name="Exploratory Data Analysis" level={4} />
-            <Skill name="Data Preparation & Transformation" level={4} />
-            <Skill name="ETL/ELT" level={4} />
-            <Skill name="ML Models" level={4} />
-            <Skill name="Generative AI (Agents)" level={3} />
-            <Skill name="SQL Databases" level={4} />
-            <Skill name="Agile Project Management" level={3} />
-            <Skill name="Version Control" level={4} />
+            <Skill name="SQL & Data Manipulation" />
+            <Skill name="Python for data processing and automation" />
+            <Skill name="ETL/ELT pipeline development and orchestration" />
+            <Skill name="AWS Cloud Data Solutions" />
+            <Skill name="Data Warehouse, Lake & Lakehouse Modeling"/>
+            <Skill name="Big Data Tools & Concepts" />
+            <Skill name="Exploratory Data Analysis and Visualization" />
+            <Skill name="Foundations of AI & Machine Learning" />
+            <Skill name="Feature engineering and preprocessing" />
+            <Skill name="Generative AI & Large Language Models (LLMs)" />
+            <Skill name="AWS AI Services" />
           </div>
         </div>
       </div>

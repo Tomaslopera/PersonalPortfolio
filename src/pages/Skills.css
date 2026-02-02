@@ -89,7 +89,7 @@
   word-break: break-word; 
 }
 
-.skill-bar {
+/* .skill-bar {
   flex: 3;
   background-color: #f2f2f2;
   height: 8px;
@@ -97,16 +97,16 @@
   overflow: hidden;
   position: relative;
   margin: 0 1rem;
-}
-
+} */
+/* 
 .filled {
   height: 100%; 
   background-color: #003366;
   border-radius: 8px;
   transition: width 0.3s ease;
-}
+} */
 
-.skill-percent {
+/* .skill-percent {
   display: none;
 }
 
@@ -114,4 +114,4 @@
   width: 2px;
   background-color: white;
   opacity: 0.2;
-}
+} */

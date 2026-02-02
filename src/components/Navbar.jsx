@@ -30,8 +30,8 @@ function Navbar() {
         {/* Enlaces desktop */}
         <div className="navbar-links desktop">
           <Link to="/" className="nav-item">About Me</Link>
-          <Link to="/skills" className="nav-item">Skills</Link>
           <Link to="/projects" className="nav-item">Projects</Link>
+          {/* <Link to="/experience" className="nav-item">Experience</Link> */}
           <Link to="/education" className="nav-item">Education</Link>
         </div>
       </div>
@@ -40,8 +40,8 @@ function Navbar() {
       <aside className={`drawer ${menuOpen ? "open" : ""}`}>
         <div className="drawer-inner">
           <Link to="/" onClick={closeMenu} className="nav-item">About Me</Link>
-          <Link to="/skills" onClick={closeMenu} className="nav-item">Skills</Link>
           <Link to="/projects" onClick={closeMenu} className="nav-item">Projects</Link>
+          {/* <Link to="/experience" onClick={closeMenu} className="nav-item">Experience</Link> */}
           <Link to="/education" onClick={closeMenu} className="nav-item">Education</Link>
         </div>
       </aside>

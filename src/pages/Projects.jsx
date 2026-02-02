@@ -10,21 +10,21 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "AWS ETL + Data Warehouse + BI",
+      description:
+        "End-to-end data pipeline for the Olist dataset using AWS services and Prefect. Automates ETL flow from PostgreSQL (RDS) to S3 (staging zone), integrates with Redshift Serverless via Glue Data Catalog, and connects the Data Warehouse to PowerBI",
+      role: "Design & implementation of ETL flow | AWS orchestration (RDS, EC2, S3, Glue, Redshift) | automation with Prefect & crontab | BI integration",
+      technologies: ["Python", "Prefect", "PostgreSQL (RDS)", "Amazon S3", "AWS Glue", "Redshift Serverless", "Power BI", "Pandas", "Boto3"],
+      repoLink: "https://github.com/Tomaslopera/AWS_ECommerce_DW",
+      category: "Data Engineering",
+    },
+    {
       title: "ETL/ELT CoinGecko | Prefect",
       description:
         "Implementation of an ETL/ELT flow using Prefect to extract data from CoinGecko's public API, transform it with pandas, and persist it in Parquet in S3 and/or Postgres (RDS)",
       role: "Prefect decorators & custom tasks | AWS resources (S3, RDS)",
       technologies: ["Prefect", "Python", "Pandas", "Boto3", "PyArrow", "PostgreSQL", "Amazon S3"],
       repoLink: "https://github.com/Tomaslopera/ETL-ELT_CoinGecko",
-      category: "Data Engineering",
-    },
-    {
-      title: "Olist Data Pipeline | AWS ETL + Data Warehouse + BI",
-      description:
-        "End-to-end data pipeline for the Olist dataset using AWS services and Prefect. Automates ETL flow from PostgreSQL (RDS) to S3 (staging zone), integrates with Redshift Serverless via Glue Data Catalog, and connects the Data Warehouse to PowerBI",
-      role: "Design & implementation of ETL flow | AWS orchestration (RDS, EC2, S3, Glue, Redshift) | automation with Prefect & crontab | BI integration",
-      technologies: ["Python", "Prefect", "PostgreSQL (RDS)", "Amazon S3", "AWS Glue", "Redshift Serverless", "Power BI", "Pandas", "Boto3"],
-      repoLink: "https://github.com/Tomaslopera/E_Commerce_DW",
       category: "Data Engineering",
     },
     {
