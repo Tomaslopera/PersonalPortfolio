@@ -101,6 +101,24 @@ export default function Projects() {
       category: "Data Science",
     },
     {
+      title: "AI Negotiation System | Hackathon Winner",
+      description:
+        "Development of an AI-based negotiation system to assist customers with loan payment difficulties, utilizing exploratory data analysis and data cleaning for implementation in a RAG-powered negotiation chatbot.",
+      role: "Data engineering and cleaning | RAG implementation for chatbot",
+      technologies: ["Python", "Pandas", "RAG", "OpenAI"],
+      repoLink: "https://github.com/Tomaslopera/Hackathon_Sistecredito",
+      category: "AI",
+    },
+    {
+      title: "Logistic Agent | Hackathon Runner-Up",
+      description:
+        "Development of a logistics agent for optimizing delivery routes and schedules, achieving second place in the EIA University - Haceb Hackathon.",
+      role: "Data Engineer Dummy DB | n8n orchestration ",
+      technologies: ["n8n", "Microsoft Power Automate"],
+      repoLink: "https://github.com/Tomaslopera/Hackathon_Haceb",
+      category: "AI",
+    },
+    {
       title: "Genetic Algorithm | Financial Portfolios",
       description:"Financial portfolio optimizer that maximizes returns and minimizes risk using genetic algorithms",
       role: "Implemented GA (fitness, crossover, mutation, penalties) and data pipeline (yfinance)",

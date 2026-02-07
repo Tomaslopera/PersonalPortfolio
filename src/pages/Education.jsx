@@ -80,12 +80,6 @@ const ACADEMIC_EXPERIENCES = [
     repoLink: "https://github.com/Tomaslopera/Reto_Cadena"
   },
   {
-    title: "Sistecredito University Project | Generative AI",
-    organization: "EIA University - Sistecrédito",
-    dateRange: "09/2025 - 11/2025",
-    details: ["Through the subject Project 4, I am working on a project focused on Generative AI in a real production environment"],
-  },
-  {
     title: "Innovation Hackathon Participant",
     organization: "ISA",
     dateRange: "05/2024",
