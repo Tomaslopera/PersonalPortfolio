@@ -55,6 +55,26 @@ export default function Projects() {
       category: "Data Engineering",
     },
     {
+      title: "Chicago Crimes Analytics | Snowflake + dbt",
+      description:
+        "End-to-end analytics engineering project using Chicago crime data. Implements ELT workflows with dbt on Snowflake, transforming raw data into clean, documented, and analytics-ready models following best practices.",
+      role:
+        "Data modeling with dbt (staging → intermediate → marts) | Snowflake warehouse management | SQL transformations",
+      technologies: ["Snowflake", "dbt", "SQL", "ELT", "Data Modeling"],
+      repoLink: "https://github.com/Tomaslopera/Chicago_Crimes",
+      category: "Data Engineering",
+    },
+    {
+      title: "Cybercrime Analytics Pipeline | Snowflake + dbt",
+      description:
+        "Analytics pipeline for cybercrime data using Snowflake and dbt. Focuses on transforming raw datasets into structured models for analysis, applying modular SQL transformations and data quality validations.",
+      role:
+        "dbt project structure design | modular SQL transformations | Snowflake integration",
+      technologies: ["Snowflake", "dbt", "SQL", "ELT"],
+      repoLink: "https://github.com/Tomaslopera/Delitos_Informaticos",
+      category: "Data Engineering",
+    },
+    {
       title: "Classification Case | Telco Customer Churn",
       description:
         "Binary classification model to predict customer churn in a telecommunications company, identifying high-risk customers for retention strategies",
