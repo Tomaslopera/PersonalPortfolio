@@ -75,6 +75,16 @@ export default function Projects() {
       category: "Data Engineering",
     },
     {
+      title: "ETL Contrataciones Pipeline | Airflow + AWS",
+      description:
+        "Production-ready ETL pipeline for processing procurement data using Apache Airflow, designed for scalable and cloud-based data workflows.",
+      role:
+        "ETL pipeline design and implementation | Airflow orchestration | data ingestion and transformation | AWS architecture design",
+      technologies: ["Python", "Apache Airflow", "AWS", "ETL"],
+      repoLink: "https://github.com/Tomaslopera/etl_contrataciones",
+      category: "Data Engineering",
+    },
+    {
       title: "Classification Case | Telco Customer Churn",
       description:
         "Binary classification model to predict customer churn in a telecommunications company, identifying high-risk customers for retention strategies",
