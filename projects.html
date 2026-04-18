@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Tomás Lopera</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ── PROJECTS PAGE ── */
+.projects-body { padding: 3.5rem 5rem 5rem; }
+
+/* Filter bar */
+.filter-bar {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  margin-bottom: 2.5rem; align-items: center;
+}
+.filter-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-right: 0.5rem; }
+.filter-btn {
+  padding: 0.45rem 1.1rem; border-radius: 100px;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.03em;
+  cursor: pointer; border: 1.5px solid var(--border);
+  background: transparent; color: var(--muted);
+  transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+}
+.filter-btn:hover { background: var(--light); border-color: var(--border); color: var(--text); }
+.filter-btn.active { background: var(--text); color: var(--white); border-color: var(--text); }
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.project-card {
+  background: var(--white); border: 1px solid var(--mid);
+  border-radius: 14px; padding: 1.5rem;
+  display: flex; flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+
+.project-card-top-line { height: 3px; border-radius: 3px 3px 0 0; position: absolute; top: -1px; left: -1px; right: -1px; border-radius: 14px 14px 0 0; }
+
+.project-cat-badge {
+  display: inline-block;
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.25rem 0.65rem;
+  border-radius: 100px; margin-bottom: 0.8rem; width: fit-content;
+}
+.badge-de { background: var(--blue-light); color: var(--blue); }
+.badge-ds { background: var(--purple-light); color: var(--purple); }
+.badge-ai { background: var(--teal-light); color: var(--teal); }
+.badge-bi { background: var(--amber-light); color: var(--amber); }
+.badge-be { background: var(--coral-light); color: var(--coral); }
+.badge-cl { background: var(--green-light); color: var(--green); }
+
+.line-de { background: var(--blue-mid); }
+.line-ds { background: var(--purple-mid); }
+.line-ai { background: var(--teal-mid); }
+.line-bi { background: var(--amber-mid); }
+.line-be { background: var(--coral-mid); }
+.line-cl { background: var(--green-mid); }
+
+.link-de { color: var(--blue); }
+.link-ds { color: var(--purple); }
+.link-ai { color: var(--teal); }
+.link-bi { color: var(--amber); }
+.link-be { color: var(--coral); }
+.link-cl { color: var(--green); }
+
+.project-title { font-family: 'DM Serif Display', serif; font-size: 1.1rem; line-height: 1.3; margin-bottom: 0.55rem; }
+.project-role { font-size: 0.78rem; color: var(--faint); font-style: italic; margin-bottom: 0.7rem; line-height: 1.5; }
+.project-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 1rem; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+  text-decoration: none; margin-top: auto;
+  transition: gap 0.15s;
+}
+.project-link:hover { gap: 0.5rem; }
+
+/* Count bar */
+.results-bar { font-size: 0.8rem; color: var(--faint); margin-bottom: 1.5rem; }
+.results-bar strong { color: var(--text); }
+
+@media (max-width: 1024px) {
+  .projects-body { padding: 2.5rem 2rem 4rem; }
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header class="page-header">
+    <div class="page-header-eyebrow" style="color:var(--blue)">Portfolio</div>
+    <h1>Selected <em>Projects</em></h1>
+    <p>A collection of data engineering, data science, AI, BI, and backend projects — each built to solve real problems with real tools.</p>
+  </header>
+
+  <div class="projects-body">
+
+    <div class="filter-bar reveal">
+      <span class="filter-label">Filter</span>
+      <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
+      <button class="filter-btn" onclick="filterProjects('Data Engineering',this)">Data Engineering</button>
+      <button class="filter-btn" onclick="filterProjects('Data Science',this)">Data Science</button>
+      <button class="filter-btn" onclick="filterProjects('AI',this)">AI</button>
+      <button class="filter-btn" onclick="filterProjects('BI',this)">BI</button>
+      <button class="filter-btn" onclick="filterProjects('Backend',this)">Backend</button>
+      <button class="filter-btn" onclick="filterProjects('Cloud',this)">Cloud</button>
+    </div>
+
+    <div class="results-bar reveal" id="results-bar"><strong>20</strong> projects</div>
+
+    <div class="projects-grid" id="projects-grid">
+      <!-- populated from data.js -->
+    </div><!-- end projects-grid -->
+  </div><!-- end projects-body -->
+
+</div>
+<script src="data.js"></script>
+<script src="nav.js"></script>
+<script>
+/* ── Category config ── */
+const CAT = {
+  "Data Engineering": { badge: "badge-de", line: "line-de", link: "link-de" },
+  "Data Science":     { badge: "badge-ds", line: "line-ds", link: "link-ds" },
+  "AI":               { badge: "badge-ai", line: "line-ai", link: "link-ai" },
+  "BI":               { badge: "badge-bi", line: "line-bi", link: "link-bi" },
+  "Backend":          { badge: "badge-be", line: "line-be", link: "link-be" },
+  "Cloud":            { badge: "badge-cl", line: "line-cl", link: "link-cl" },
+};
+
+/* ── Render projects from DATA ── */
+const grid = document.getElementById('projects-grid');
+grid.innerHTML = DATA.projects.map((p, i) => {
+  const c = CAT[p.category] || CAT["Data Engineering"];
+  const delay = (i % 3) * 0.06;
+  return `
+    <div class="project-card reveal" data-cat="${p.category}" style="transition-delay:${delay}s">
+      <div class="project-card-top-line ${c.line}"></div>
+      <span class="project-cat-badge ${c.badge}">${p.category}</span>
+      <h3 class="project-title">${p.title}</h3>
+      <p class="project-role">${p.role}</p>
+      <p class="project-desc">${p.description}</p>
+      <div class="project-stack">${p.stack.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <a href="${p.repo}" target="_blank" class="project-link ${c.link}">View on GitHub →</a>
+    </div>`;
+}).join('');
+
+/* ── Filter ── */
+const allCards = document.querySelectorAll('.project-card');
+
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  let count = 0;
+  allCards.forEach(card => {
+    const show = cat === 'all' || card.dataset.cat === cat;
+    card.style.display = show ? 'flex' : 'none';
+    if (show) count++;
+  });
+  document.getElementById('results-bar').innerHTML =
+    `<strong>${count}</strong> project${count !== 1 ? 's' : ''}${cat !== 'all' ? ' in <em>' + cat + '</em>' : ''}`;
+}
+
+/* ── Stagger on load ── */
+allCards.forEach((card, i) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(18px)';
+  card.style.transition = `opacity 0.45s ${i * 0.035}s ease, transform 0.45s ${i * 0.035}s ease, box-shadow 0.25s`;
+  setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 80 + i * 35);
+});
+
+/* ── Update count on load ── */
+document.getElementById('results-bar').innerHTML = `<strong>${DATA.projects.length}</strong> projects`;
+
+/* ── Init reveal AFTER content is rendered ── */
+initReveal();
+</script>
+</body>
+</html>

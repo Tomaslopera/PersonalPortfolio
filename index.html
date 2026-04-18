@@ -1,13 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tomás Lopera Duque — Data & AI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+#hero { min-height: 100vh; display: grid; grid-template-columns: 58% 42%; padding-top: 72px; }
+.hero-left { padding: 3rem 4rem 4rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+.hero-eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; opacity: 0; animation: fadeUp 0.7s 0.1s forwards; }
+.hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 5.5vw, 5rem); line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 1.6rem; opacity: 0; animation: fadeUp 0.7s 0.25s forwards; }
+.hero-name em { font-style: italic; color: var(--blue); }
+.hero-bio { font-size: 1.05rem; color: var(--muted); line-height: 1.8; max-width: 460px; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.7s 0.4s forwards; }
+.hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.55s forwards; }
+
+.hero-right { background: var(--off); display: flex; flex-direction: column; gap: 1px; padding: 1px; opacity: 0; animation: fadeIn 1s 0.35s forwards; }
+.hero-tile { background: var(--white); padding: 1.75rem 2.5rem; display: flex; flex-direction: column; justify-content: center; flex: 1; position: relative; overflow: hidden; transition: background 0.2s; }
+.hero-tile:hover { background: var(--off); }
+.hero-tile-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; transform-origin: left; animation: slideRight 0.6s ease forwards; }
+.hero-tile-num { font-family: 'DM Serif Display', serif; font-size: 2.6rem; line-height: 1; color: var(--mid); margin-bottom: 0.4rem; }
+.hero-tile-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.hero-tile-desc { font-size: 0.82rem; color: var(--faint); }
+
+#about { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--mid); border-bottom: 1px solid var(--mid); }
+.about-block { padding: 3.5rem 5rem; }
+.about-block + .about-block { border-left: 1px solid var(--mid); background: var(--off); }
+.about-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 1.2rem; }
+.about-block p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+
+#skills-snap { padding: 5rem; background: var(--white); }
+.tech-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.tech-cat { background: var(--off); border: 1px solid var(--mid); border-radius: 12px; padding: 1.4rem 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+.tech-cat:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.tech-cat-header { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 1rem; }
+.tech-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.tech-cat-name { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.chips-wrap { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+#page-nav { padding: 0; background: var(--off); }
+.page-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.page-nav-card { padding: 3.5rem 3rem; text-decoration: none; color: var(--text); border-right: 1px solid var(--mid); transition: background 0.2s; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
+.page-nav-card:last-child { border-right: none; }
+.page-nav-card:hover { background: var(--white); }
+.page-nav-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 1rem; }
+.page-nav-title { font-family: 'DM Serif Display', serif; font-size: 1.7rem; line-height: 1.2; margin-bottom: 0.75rem; }
+.page-nav-title em { font-style: italic; transition: color 0.2s; }
+.page-nav-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; flex: 1; }
+.page-nav-arrow { margin-top: 1.5rem; font-size: 1.3rem; color: var(--faint); display: inline-block; transition: transform 0.2s, color 0.2s; }
+.page-nav-card:hover .page-nav-arrow { transform: translate(4px,-4px); color: var(--text); }
+.page-nav-card:hover .page-nav-title em { color: var(--blue); }
+
+@media (max-width: 1024px) {
+  #hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 5rem 2rem 2rem; }
+  .hero-right { display: none; }
+  #about { grid-template-columns: 1fr; }
+  .about-block + .about-block { border-left: none; border-top: 1px solid var(--mid); }
+  .about-block { padding: 2.5rem 2rem; }
+  #skills-snap { padding: 3rem 2rem; }
+  .tech-row { grid-template-columns: 1fr 1fr; }
+  .page-nav-grid { grid-template-columns: 1fr; }
+  .page-nav-card { border-right: none; border-bottom: 1px solid var(--mid); }
+}
+@media (max-width: 640px) { .tech-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow" id="hero-eyebrow"></p>
+      <h1 class="hero-name">Tomás<br><em>Lopera</em><br>Duque</h1>
+      <p class="hero-bio" id="hero-bio"></p>
+      <div class="hero-cta">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a id="hero-github" href="#" target="_blank" class="btn btn-ghost">GitHub</a>
+        <a id="hero-linkedin" href="#" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-right" id="hero-right"></div>
+  </section>
+
+  <section id="about">
+    <div class="about-block reveal">
+      <div class="about-label">Who I am</div>
+      <p id="about-who"></p>
+    </div>
+    <div class="about-block reveal" style="transition-delay:0.1s">
+      <div class="about-label">What I focus on</div>
+      <p id="about-focus"></p>
+    </div>
+  </section>
+
+  <section id="skills-snap">
+    <div class="section-label">Technologies</div>
+    <h2 class="section-title reveal">Stack</h2>
+    <div class="tech-row" id="tech-row"></div>
+  </section>
+
+  <section id="page-nav">
+    <div class="page-nav-grid">
+      <a href="projects.html" class="page-nav-card reveal">
+        <div>
+          <div class="page-nav-eyebrow">Portfolio</div>
+          <h2 class="page-nav-title">All <em>Projects</em></h2>
+          <p class="page-nav-desc">20+ projects across Data Engineering, Data Science, AI, BI and Backend — with full stack details and GitHub links.</p>
+        </div>
+        <span class="page-nav-arrow">↗</span>
+      </a>
+      <a href="experience.html" class="page-nav-card reveal" style="transition-delay:0.08s">
+        <div>
+          <div class="page-nav-eyebrow">Work &amp; Academic</div>
+          <h2 class="page-nav-title">My <em>Experience</em></h2>
+          <p class="page-nav-desc">Professional internship at Cadena SA, two hackathon finishes and a range of academic challenges and research projects.</p>
+        </div>
+        <span class="page-nav-arrow">↗</span>
+      </a>
+      <a href="education.html" class="page-nav-card reveal" style="transition-delay:0.16s">
+        <div>
+          <div class="page-nav-eyebrow">Background</div>
+          <h2 class="page-nav-title">Education &amp; <em>Credentials</em></h2>
+          <p class="page-nav-desc">Software Engineering at Universidad EIA with a focus on data and AI, complemented by industry certifications in deep learning, NLP, and prompt engineering.</p>
+        </div>
+        <span class="page-nav-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+<script src="data.js"></script>
+<script src="nav.js"></script>
+<script>
+/* 1 — Populate all content from DATA */
+document.getElementById('hero-eyebrow').textContent   = DATA.role;
+document.getElementById('hero-bio').textContent        = DATA.bio;
+document.getElementById('hero-github').href            = DATA.github;
+document.getElementById('hero-linkedin').href          = DATA.linkedin;
+document.getElementById('about-who').textContent       = DATA.aboutWho;
+document.getElementById('about-focus').textContent     = DATA.aboutFocus;
+
+document.getElementById('hero-right').innerHTML = DATA.stats.map(s => `
+  <div class="hero-tile">
+    <div class="hero-tile-bar" style="background:${s.color}"></div>
+    <div class="hero-tile-num">${s.num}</div>
+    <div class="hero-tile-label">${s.label}</div>
+    <div class="hero-tile-desc">${s.desc}</div>
+  </div>`).join('');
+
+document.getElementById('tech-row').innerHTML = DATA.stack.map((cat, i) => `
+  <div class="tech-cat reveal" style="transition-delay:${i * 0.06}s">
+    <div class="tech-cat-header">
+      <div class="tech-cat-dot" style="background:${cat.color}"></div>
+      <span class="tech-cat-name">${cat.name}</span>
+    </div>
+    <div class="chips-wrap">${cat.chips.map(c => `<span class="chip">${c}</span>`).join('')}</div>
+  </div>`).join('');
+
+/* 2 — Init reveal AFTER all content is in the DOM */
+initReveal();
+</script>
+</body>
 </html>

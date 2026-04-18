@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Experience — Tomás Lopera</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.exp-body { padding: 3.5rem 5rem 5rem; }
+
+.stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--mid); border: 1px solid var(--mid); border-radius: 14px; overflow: hidden; margin-bottom: 4rem; }
+.stat-item { background: var(--white); padding: 1.75rem; text-align: center; transition: background 0.2s; }
+.stat-item:hover { background: var(--off); }
+.stat-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; line-height: 1; margin-bottom: 0.4rem; }
+.stat-lbl { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+
+.exp-section { margin-bottom: 5rem; }
+.exp-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.4rem 0; border-top: 2px solid; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.8rem; }
+.exp-section-label span { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; letter-spacing: -0.02em; color: var(--text); }
+
+.work-card { background: var(--white); border: 1px solid var(--mid); border-top: 3px solid var(--blue-mid); border-radius: 14px; padding: 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; transition: box-shadow 0.25s; margin-bottom: 1.5rem; }
+.work-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.08); }
+.work-org { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.4rem; }
+.work-title { font-family: 'DM Serif Display', serif; font-size: 1.8rem; line-height: 1.15; margin-bottom: 1rem; }
+.work-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; max-width: 600px; margin-bottom: 1.5rem; }
+.work-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.work-meta { text-align: right; }
+.work-date { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--faint); white-space: nowrap; }
+.work-status { display: inline-block; margin-top: 0.6rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; background: var(--teal-light); color: var(--teal); }
+
+.academic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.academic-card { background: var(--off); border: 1px solid var(--mid); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.22s, box-shadow 0.22s; }
+.academic-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.ac-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.9rem; gap: 1rem; }
+.ac-org { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.ac-date { font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: var(--faint); white-space: nowrap; flex-shrink: 0; }
+.ac-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; line-height: 1.3; margin-bottom: 0.75rem; }
+.ac-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+.badge-prize { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.65rem; border-radius: 100px; margin-bottom: 0.7rem; width: fit-content; }
+.badge-winner { background: var(--amber-light); color: var(--amber); }
+.badge-runner  { background: var(--blue-light);  color: var(--blue); }
+.ac-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.76rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-top: auto; transition: gap 0.15s; }
+.ac-link:hover { gap: 0.5rem; }
+
+@media (max-width: 1024px) {
+  .exp-body { padding: 2.5rem 2rem 4rem; }
+  .work-card { grid-template-columns: 1fr; gap: 1rem; }
+  .work-meta { text-align: left; }
+  .academic-grid { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header class="page-header">
+    <div class="page-header-eyebrow">Work &amp; Academic</div>
+    <h1>My <em>Experience</em></h1>
+    <p>Professional internship, hackathon finishes, academic challenges, and research projects that shaped my engineering and data skills.</p>
+  </header>
+
+  <div class="exp-body">
+
+    <div class="stat-strip reveal">
+      <div class="stat-item"><div class="stat-num" style="color:var(--blue)">1</div><div class="stat-lbl">Internship</div></div>
+      <div class="stat-item"><div class="stat-num" style="color:var(--amber)">2x</div><div class="stat-lbl">Hackathon finalist</div></div>
+      <div class="stat-item"><div class="stat-num" style="color:var(--accent)">6</div><div class="stat-lbl">Academic experiences</div></div>
+      <div class="stat-item"><div class="stat-num" style="color:var(--purple)">2026</div><div class="stat-lbl">Graduating</div></div>
+    </div>
+
+    <div class="exp-section">
+      <div class="exp-section-label reveal" style="border-color:var(--blue-mid); color:var(--blue)">
+        Professional <span>Work</span>
+      </div>
+      <div id="work-cards"></div>
+    </div>
+
+    <div class="exp-section">
+      <div class="exp-section-label reveal" style="border-color:var(--teal-mid); color:var(--accent)">
+        Academic &amp; <span>Competitions</span>
+      </div>
+      <div class="academic-grid" id="academic-cards"></div>
+    </div>
+
+  </div>
+</div>
+<script src="data.js"></script>
+<script src="nav.js"></script>
+<script>
+/* 1 — Render content */
+document.getElementById('work-cards').innerHTML = DATA.work.map(w => `
+  <div class="work-card reveal">
+    <div>
+      <div class="work-org">${w.company}</div>
+      <h2 class="work-title">${w.title}</h2>
+      <p class="work-desc">${w.description}</p>
+      <div class="work-stack">${w.stack.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    </div>
+    <div class="work-meta">
+      <div class="work-date">${w.period}</div>
+      ${w.status ? `<div class="work-status">${w.status}</div>` : ''}
+    </div>
+  </div>`).join('');
+
+document.getElementById('academic-cards').innerHTML = DATA.academic.map((a, i) => {
+  const badge = a.badge
+    ? `<span class="badge-prize ${a.badgeStyle === 'winner' ? 'badge-winner' : 'badge-runner'}">${a.badge}</span>`
+    : '';
+  const link = a.repo
+    ? `<a href="${a.repo}" target="_blank" class="ac-link">View project →</a>`
+    : '';
+  return `
+    <div class="academic-card reveal" style="transition-delay:${i * 0.06}s">
+      <div class="ac-top">
+        <div class="ac-org">${a.org}</div>
+        <span class="ac-date">${a.period}</span>
+      </div>
+      ${badge}
+      <h3 class="ac-title">${a.title}</h3>
+      <p class="ac-desc">${a.description}</p>
+      ${link}
+    </div>`;
+}).join('');
+
+/* 2 — Init reveal AFTER content is rendered */
+initReveal();
+</script>
+</body>
+</html>
