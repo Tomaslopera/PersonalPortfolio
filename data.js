@@ -8,7 +8,7 @@ const DATA = {
   /* ── PERSONAL ── */
   name:       "Tomás Lopera Duque",
   nameShort:  "Tomás Lopera",
-  role:       "Data & AI Intern · Software Engineering Student",
+  role:       "Data & AI Engineer Intern · Software Engineering Student · Data Engineering · Data Science · AWS · AI Engineering",
   location:   "Colombia",
   university: "EIA University",
   github:     "https://github.com/Tomaslopera",
@@ -22,7 +22,7 @@ const DATA = {
   bio: "Passionate about building scalable data solutions that support analytics and AI use cases. Experienced in SQL, Python, ETL/ELT pipelines and AWS cloud services.",
 
   /* about: two separate paragraphs in the ABOUT strip on the home page */
-  aboutWho:   "Data & AI Intern passionate about building scalable data solutions that support analytics and AI use cases. Skilled in data manipulation, exploratory analysis, data modeling, and foundational machine learning concepts.",
+  aboutWho:   "Data & AI Engineer Intern passionate about building scalable data solutions that support analytics and AI use cases. Skilled in data manipulation, exploratory analysis, data modeling, and foundational machine learning concepts.",
   aboutFocus: "Continuously expanding expertise in modern data engineering and cloud technologies — ETL/ELT pipelines, dimensional modeling, AWS orchestration, Lakehouse architectures, and intelligent AI agents using LLMs and RAG.",
 
   /* ── HERO STATS ── */
