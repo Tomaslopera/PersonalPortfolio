@@ -23,7 +23,9 @@
 .work-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.08); }
 .work-org { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.4rem; }
 .work-title { font-family: 'DM Serif Display', serif; font-size: 1.8rem; line-height: 1.15; margin-bottom: 1rem; }
-.work-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; max-width: 600px; margin-bottom: 1.5rem; }
+.work-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; max-width: 600px; margin-bottom: 0.9rem; }
+.work-bullets { font-size: 0.88rem; color: var(--muted); line-height: 1.8; padding-left: 1.1rem; margin: 0 0 1.5rem; max-width: 620px; }
+.work-bullets li { margin-bottom: 0.35rem; }
 .work-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .work-meta { text-align: right; }
 .work-date { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--faint); white-space: nowrap; }
@@ -64,7 +66,7 @@
   <div class="exp-body">
 
     <div class="stat-strip reveal">
-      <div class="stat-item"><div class="stat-num" style="color:var(--blue)">1</div><div class="stat-lbl">Internship</div></div>
+      <div class="stat-item"><div class="stat-num" style="color:var(--blue)">3</div><div class="stat-lbl">Work Roles</div></div>
       <div class="stat-item"><div class="stat-num" style="color:var(--amber)">2x</div><div class="stat-lbl">Hackathon finalist</div></div>
       <div class="stat-item"><div class="stat-num" style="color:var(--accent)">6</div><div class="stat-lbl">Academic experiences</div></div>
       <div class="stat-item"><div class="stat-num" style="color:var(--purple)">2026</div><div class="stat-lbl">Graduating</div></div>
@@ -96,6 +98,7 @@ document.getElementById('work-cards').innerHTML = DATA.work.map(w => `
       <div class="work-org">${w.company}</div>
       <h2 class="work-title">${w.title}</h2>
       <p class="work-desc">${w.description}</p>
+      ${w.bullets && w.bullets.length ? `<ul class="work-bullets">${w.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
       <div class="work-stack">${w.stack.map(t => `<span class="tag">${t}</span>`).join('')}</div>
     </div>
     <div class="work-meta">

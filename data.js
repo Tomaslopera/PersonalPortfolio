@@ -155,12 +155,40 @@ const DATA = {
   /* ── WORK EXPERIENCE (professional jobs) ── */
   work: [
     {
+      company:     "Cuántico Seguros",
+      title:       "Cloud Developer",
+      period:      "Apr 2026 — Jun 2026",
+      status:      "Active",
+      description: "Developed and deployed a web platform for an insurance company, with full ownership over frontend development and AWS cloud infrastructure.",
+      bullets: [
+        "Designed and implemented the frontend and AWS cloud infrastructure using S3, CloudFront, Contentful, and Google Analytics.",
+      ],
+      stack:       ["S3", "CloudFront", "Contentful", "Google Analytics", "Frontend"],
+    },
+    {
       company:     "Cadena SA",
       title:       "Data & AI Intern",
       period:      "Jan 2026 — Jul 2026",
       status:      "Active",
-      description: "Working within the data and AI team on document intelligence and data pipeline development. Building automated workflows with AWS — Textract for OCR, S3 for storage, RDS for persistence, and Lambda for serverless processing.",
-      stack:       ["Python", "SQL", "ETL", "Textract", "S3", "RDS", "Lambda"],
+      description: "Worked within the data and AI team on document intelligence, ML infrastructure, and data pipeline modernization using AWS services.",
+      bullets: [
+        "Built an ETL pipeline using AWS Textract to extract structured data from physical forms and load it into a relational database, replacing a fully manual data entry process.",
+        "Designed an AWS architecture using SageMaker to automate the training workflow of a YOLO object detection model, including data ingestion, processing job orchestration, and output pipelines.",
+        "Migrated a legacy Excel macro-based ETL process to Python and deployed a cloud data warehouse architecture using Amazon Redshift, with self-service dashboards consumed by the analytics team via Amazon QuickSight.",
+      ],
+      stack:       ["Python", "SQL", "ETL", "Textract", "S3", "RDS", "SageMaker", "Redshift", "QuickSight"],
+    },
+    {
+      company:     "Universidad EIA",
+      title:       "AI Developer",
+      period:      "Jun 2025 — Oct 2025",
+      status:      null,
+      description: "Developed an OCR MVP and proposed a full AWS deployment architecture as part of a university-industry innovation challenge for EIA University and Cadena SA.",
+      bullets: [
+        "Built an OCR MVP using AWS Textract and OpenCV to extract and validate data from technical data sheets.",
+        "Proposed and documented a full AWS deployment architecture for scaling the solution to production.",
+      ],
+      stack:       ["Python", "AWS Textract", "OpenCV", "Streamlit", "AWS"],
     },
   ],
 
