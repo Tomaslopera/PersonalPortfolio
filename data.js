@@ -167,7 +167,7 @@ const DATA = {
     },
     {
       company:     "Cadena SA",
-      title:       "Data & AI Intern",
+      title:       "Data & AI Engineer Intern",
       period:      "Jan 2026 — Jul 2026",
       status:      "Active",
       description: "Worked within the data and AI team on document intelligence, ML infrastructure, and data pipeline modernization using AWS services.",
