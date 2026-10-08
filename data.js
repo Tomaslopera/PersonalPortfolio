@@ -8,7 +8,7 @@ const DATA = {
   /* ── PERSONAL ── */
   name:       "Tomás Lopera Duque",
   nameShort:  "Tomás Lopera",
-  role:       "Product Operations Analyst @ Alegra | Software Engineer @ EIA University | Data Engineer | AI Engineer | AWS",
+  role:       "Product Operations Analyst | Software Engineer | Data Engineer | AI Engineer | AWS",
   location:   "Colombia",
   university: "EIA University",
   github:     "https://github.com/Tomaslopera",
