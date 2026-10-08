@@ -8,21 +8,21 @@ const DATA = {
   /* ── PERSONAL ── */
   name:       "Tomás Lopera Duque",
   nameShort:  "Tomás Lopera",
-  role:       "Data & AI Engineer Intern · Software Engineering Student · Data Engineering · Data Science · AWS · AI Engineering",
+  role:       "Product Operations Analyst @ Alegra | Software Engineer @ EIA University | Data Engineer | AI Engineer | AWS",
   location:   "Colombia",
   university: "EIA University",
   github:     "https://github.com/Tomaslopera",
   linkedin:   "https://www.linkedin.com/in/tomaslopera/",  /* update with your real LinkedIn URL */
 
-  /* Path to your CV PDF (place the file in the same folder as the HTML files).
+  /* Absolute path (from site root) to your CV PDF, placed in the project root.
      Set to null to hide the download button. */
-  cvPath: "cv_tomas_lopera.pdf",
+  cvPath: "/cv_tomas_lopera.pdf",
 
   /* bio: short line shown in the HERO section only */
   bio: "Passionate about building scalable data solutions that support analytics and AI use cases. Experienced in SQL, Python, ETL/ELT pipelines and AWS cloud services.",
 
   /* about: two separate paragraphs in the ABOUT strip on the home page */
-  aboutWho:   "Data & AI Engineer Intern passionate about building scalable data solutions that support analytics and AI use cases. Skilled in data manipulation, exploratory analysis, data modeling, and foundational machine learning concepts.",
+  aboutWho:   "Product Operations Analyst at Alegra, coordinating cross-functional work across the product area while architecting AI agents and internal tooling that automate product workflows. Background in data engineering, data science, and AWS cloud infrastructure.",
   aboutFocus: "Continuously expanding expertise in modern data engineering and cloud technologies — ETL/ELT pipelines, dimensional modeling, AWS orchestration, Lakehouse architectures, and intelligent AI agents using LLMs and RAG.",
 
   /* ── HERO STATS ── */
@@ -155,10 +155,24 @@ const DATA = {
   /* ── WORK EXPERIENCE (professional jobs) ── */
   work: [
     {
+      company:     "Alegra",
+      title:       "Product Operations Analyst",
+      period:      "Jul 2026 — Present",
+      status:      "Active",
+      description: "Coordinating cross-functional work across Alegra's product area and building AI-driven tooling that automates internal product workflows.",
+      bullets: [
+        "Coordinate cross-functional work across teams to keep product initiatives aligned.",
+        "Architect and ship AI agents and skills — Claude-based tooling and MCP integrations — automating internal product workflows.",
+        "Build internal tooling connecting Linear, Google Workspace, and company data sources into unified product-ops systems.",
+        "Design automation for recurring processes, reducing manual overhead across the product team.",
+      ],
+      stack:       ["Claude", "MCP", "Linear", "Google Workspace", "Automation", "Product Ops"],
+    },
+    {
       company:     "Cuántico Seguros",
       title:       "Cloud Developer",
-      period:      "Apr 2026 — Jun 2026",
-      status:      "Active",
+      period:      "Apr 2026 — Jul 2026",
+      status:      null,
       description: "Developed and deployed a web platform for an insurance company, with full ownership over frontend development and AWS cloud infrastructure.",
       bullets: [
         "Designed and implemented the frontend and AWS cloud infrastructure using S3, CloudFront, Contentful, and Google Analytics.",
@@ -169,7 +183,7 @@ const DATA = {
       company:     "Cadena SA",
       title:       "Data & AI Engineer Intern",
       period:      "Jan 2026 — Jul 2026",
-      status:      "Active",
+      status:      null,
       description: "Worked within the data and AI team on document intelligence, ML infrastructure, and data pipeline modernization using AWS services.",
       bullets: [
         "Built an ETL pipeline using AWS Textract to extract structured data from physical forms and load it into a relational database, replacing a fully manual data entry process.",

@@ -18,7 +18,9 @@ No tests exist. No lint tooling.
 
 Vanilla HTML/CSS/JS portfolio — no framework, no bundler, no npm.
 
-**Pages:** `index.html` · `projects.html` · `experience.html` · `education.html`
+**Pages:** `index.html` · `projects/index.html` · `experience/index.html` · `education/index.html`
+
+Each inner page lives in its own directory as `index.html`, giving clean URLs (`/projects`, `/experience`, `/education`) with zero server config — every static host (plain Python/Node servers, Netlify, GitHub Pages, etc.) serves a directory's `index.html` automatically when a trailing slash is added, and all of them auto-redirect `/projects` → `/projects/`. Because pages are nested one level deep, `styles.css`, `data.js`, `nav.js`, and `DATA.cvPath` are all referenced by **absolute path** (`/styles.css`, not `styles.css`) — keep it that way when adding pages or assets.
 
 **Shared files loaded by every page (in this order):**
 1. `styles.css` — global design tokens, nav, footer, buttons, chips, animations, and all shared utilities
@@ -49,7 +51,7 @@ Typography: **DM Serif Display** (headings/display), **DM Sans** (body), **JetBr
 
 **All content lives in `data.js`.** To add or edit projects, experience entries, education, certifications, or personal info — edit only `data.js`. The HTML files read from `DATA` at runtime and never contain content directly.
 
-The `DATA.cvPath` field controls whether a "Download CV" button appears in the nav — set to `null` to hide it or provide a filename relative to the HTML files.
+The `DATA.cvPath` field controls whether a "Download CV" button appears in the nav — set to `null` to hide it or provide an absolute path (e.g. `/cv_tomas_lopera.pdf`) to a file in the project root.
 
 ## Key Conventions
 

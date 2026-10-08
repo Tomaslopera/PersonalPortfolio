@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tomás Lopera Duque — Data & AI</title>
+<title>Tomás Lopera Duque — Product Ops & AI</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="/styles.css" />
 <style>
 #hero { min-height: 100vh; display: grid; grid-template-columns: 58% 42%; padding-top: 72px; }
 .hero-left { padding: 3rem 4rem 4rem 5rem; display: flex; flex-direction: column; justify-content: center; }
@@ -75,7 +75,7 @@
       <h1 class="hero-name">Tomás<br><em>Lopera</em><br>Duque</h1>
       <p class="hero-bio" id="hero-bio"></p>
       <div class="hero-cta">
-        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a href="/projects" class="btn btn-primary">View Projects</a>
         <a id="hero-github" href="#" target="_blank" class="btn btn-ghost">GitHub</a>
         <a id="hero-linkedin" href="#" target="_blank" class="btn btn-ghost">LinkedIn</a>
       </div>
@@ -102,7 +102,7 @@
 
   <section id="page-nav">
     <div class="page-nav-grid">
-      <a href="projects.html" class="page-nav-card reveal">
+      <a href="/projects" class="page-nav-card reveal">
         <div>
           <div class="page-nav-eyebrow">Portfolio</div>
           <h2 class="page-nav-title">All <em>Projects</em></h2>
@@ -110,15 +110,15 @@
         </div>
         <span class="page-nav-arrow">↗</span>
       </a>
-      <a href="experience.html" class="page-nav-card reveal" style="transition-delay:0.08s">
+      <a href="/experience" class="page-nav-card reveal" style="transition-delay:0.08s">
         <div>
           <div class="page-nav-eyebrow">Work &amp; Academic</div>
           <h2 class="page-nav-title">My <em>Experience</em></h2>
-          <p class="page-nav-desc">Professional internship at Cadena SA, two hackathon finishes and a range of academic challenges and research projects.</p>
+          <p class="page-nav-desc">Product Operations Analyst at Alegra, a prior internship at Cadena SA, two hackathon finishes and a range of academic challenges and research projects.</p>
         </div>
         <span class="page-nav-arrow">↗</span>
       </a>
-      <a href="education.html" class="page-nav-card reveal" style="transition-delay:0.16s">
+      <a href="/education" class="page-nav-card reveal" style="transition-delay:0.16s">
         <div>
           <div class="page-nav-eyebrow">Background</div>
           <h2 class="page-nav-title">Education &amp; <em>Credentials</em></h2>
@@ -130,8 +130,8 @@
   </section>
 
 </div>
-<script src="data.js"></script>
-<script src="nav.js"></script>
+<script src="/data.js"></script>
+<script src="/nav.js"></script>
 <script>
 /* 1 — Populate all content from DATA */
 document.getElementById('hero-eyebrow').textContent   = DATA.role;

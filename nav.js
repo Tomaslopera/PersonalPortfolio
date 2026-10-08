@@ -1,13 +1,15 @@
 /* nav.js — injects nav + footer. Call initReveal() after rendering page content. */
 (function () {
   const pages = [
-    { href: 'index.html',      label: 'Home'       },
-    { href: 'projects.html',   label: 'Projects'   },
-    { href: 'experience.html', label: 'Experience' },
-    { href: 'education.html',  label: 'Education'  },
+    { href: '/',           label: 'Home'       },
+    { href: '/projects',   label: 'Projects'   },
+    { href: '/experience', label: 'Experience' },
+    { href: '/education',  label: 'Education'  },
   ];
 
-  const current = location.pathname.split('/').pop() || 'index.html';
+  let current = location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  if (current === '') current = '/';
+  if (current.length > 1 && current.endsWith('/')) current = current.slice(0, -1);
 
   const cvButton = DATA.cvPath
     ? `<a href="${DATA.cvPath}" download class="nav-cv-btn">Download CV</a>`
@@ -15,7 +17,7 @@
 
   document.body.insertAdjacentHTML('afterbegin', `
     <nav id="main-nav">
-      <a href="index.html" class="nav-logo">${DATA.nameShort}</a>
+      <a href="/" class="nav-logo">${DATA.nameShort}</a>
       <ul class="nav-links">
         ${pages.map(p => `<li><a href="${p.href}" class="${current === p.href ? 'active' : ''}">${p.label}</a></li>`).join('')}
       </ul>
@@ -44,13 +46,13 @@
   document.body.insertAdjacentHTML('beforeend', `
     <footer>
       <div class="footer-name">${DATA.name}</div>
-      <div class="footer-copy">Data &amp; AI · ${DATA.university} · ${DATA.location}</div>
+      <div class="footer-copy">Product Ops &amp; AI · ${DATA.university} · ${DATA.location}</div>
       <div class="footer-links">
         <a href="${DATA.github}" target="_blank">GitHub</a>
         <a href="${DATA.linkedin}" target="_blank">LinkedIn</a>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="education.html">Education</a>
+        <a href="/projects">Projects</a>
+        <a href="/experience">Experience</a>
+        <a href="/education">Education</a>
       </div>
     </footer>`);
 
