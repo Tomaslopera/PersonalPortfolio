@@ -4,161 +4,453 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tomás Lopera Duque — Product Ops & AI</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/styles.css" />
 <style>
-#hero { min-height: 100vh; display: grid; grid-template-columns: 58% 42%; padding-top: 72px; }
-.hero-left { padding: 3rem 4rem 4rem 5rem; display: flex; flex-direction: column; justify-content: center; }
-.hero-eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; opacity: 0; animation: fadeUp 0.7s 0.1s forwards; }
-.hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 5.5vw, 5rem); line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 1.6rem; opacity: 0; animation: fadeUp 0.7s 0.25s forwards; }
-.hero-name em { font-style: italic; color: var(--blue); }
-.hero-bio { font-size: 1.05rem; color: var(--muted); line-height: 1.8; max-width: 460px; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.7s 0.4s forwards; }
+/* ── HERO ── */
+#hero { min-height: 92vh; display: flex; align-items: center; }
+.hero-content { display: flex; align-items: center; justify-content: space-between; gap: 3rem; width: 100%; }
+.hero-text { flex: 1; min-width: 0; }
+.hero-portrait { flex-shrink: 0; width: 300px; aspect-ratio: 340 / 453; opacity: 0; animation: fadeIn 0.8s 0.3s forwards; }
+#portrait-canvas { width: 100%; height: 100%; display: block; }
+.hero-name { font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.4rem; opacity: 0; animation: fadeUp 0.7s 0.1s forwards; max-width: 760px; }
+.hero-name::after { content: ""; display: inline-block; width: 3px; height: 0.85em; background: var(--white); margin-left: 8px; vertical-align: -3px; animation: blink 1s steps(1) infinite; }
+.hero-name em { font-style: italic; color: var(--accent); }
+.hero-bio { font-size: 1.02rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 0.7s 0.4s forwards; }
 .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.55s forwards; }
+.btn-mail::before { content: none; }
+.btn-mail svg { width: 15px; height: 15px; fill: currentColor; }
 
-.hero-right { background: var(--off); display: flex; flex-direction: column; gap: 1px; padding: 1px; opacity: 0; animation: fadeIn 1s 0.35s forwards; }
-.hero-tile { background: var(--white); padding: 1.75rem 2.5rem; display: flex; flex-direction: column; justify-content: center; flex: 1; position: relative; overflow: hidden; transition: background 0.2s; }
-.hero-tile:hover { background: var(--off); }
-.hero-tile-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; transform-origin: left; animation: slideRight 0.6s ease forwards; }
-.hero-tile-num { font-family: 'DM Serif Display', serif; font-size: 2.6rem; line-height: 1; color: var(--mid); margin-bottom: 0.4rem; }
-.hero-tile-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
-.hero-tile-desc { font-size: 0.82rem; color: var(--faint); }
+/* ── ABOUT ── */
+.about-text p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; max-width: 680px; margin-bottom: 1.1rem; }
+.about-text strong { color: var(--text); }
+.about-tech { margin-top: 1.6rem; font-size: 0.9rem; color: var(--muted); }
+.about-tech strong { color: var(--accent); font-weight: 600; }
 
-#about { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--mid); border-bottom: 1px solid var(--mid); }
-.about-block { padding: 3.5rem 5rem; }
-.about-block + .about-block { border-left: 1px solid var(--mid); background: var(--off); }
-.about-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 1.2rem; }
-.about-block p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+/* ── TABS (shared by Experience and Skills) ── */
+.tabs { display: flex; gap: 2.5rem; margin-bottom: 3rem; }
+.tab-list { display: flex; flex-direction: column; border-left: 2px solid var(--mid); flex-shrink: 0; min-width: 190px; }
+.tab {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.84rem; font-weight: 500; text-align: left;
+  color: var(--muted); background: none; border: none; border-left: 2px solid transparent; margin-left: -2px;
+  padding: 0.75rem 1.1rem; cursor: pointer; transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.tab:hover { color: var(--text); background: var(--accent-dim); }
+.tab.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-dim); font-weight: 600; }
+.tab-panels { flex: 1; min-width: 0; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 
-#skills-snap { padding: 5rem; background: var(--white); }
-.tech-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.tech-cat { background: var(--off); border: 1px solid var(--mid); border-radius: 12px; padding: 1.4rem 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
-.tech-cat:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
-.tech-cat-header { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 1rem; }
-.tech-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.tech-cat-name { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.chips-wrap { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+/* ── EXPERIENCE ── */
+.exp-role { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.15rem; color: var(--white); }
+.exp-co { color: var(--accent); }
+.exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--faint); margin: 0.4rem 0 1.2rem; }
+.exp-status { display: inline-block; margin-left: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 100px; background: var(--teal-light); color: var(--teal); vertical-align: 1px; }
+.exp-status::before { content: "● "; }
+.exp-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin-bottom: 0.9rem; max-width: 620px; }
+.exp-bullets { color: var(--muted); font-size: 0.88rem; line-height: 1.75; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.55rem; max-width: 620px; }
+.exp-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.exp-subproject { padding-bottom: 1.8rem; margin-bottom: 1.8rem; border-bottom: 1px solid var(--mid); }
+.exp-subproject:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+.exp-subproject .exp-role { font-size: 1.02rem; }
+.exp-sub-client { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+.exp-role a { color: inherit; text-decoration: none; }
+.exp-role a:hover { color: var(--accent); }
 
-#page-nav { padding: 0; background: var(--off); }
-.page-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-.page-nav-card { padding: 3.5rem 3rem; text-decoration: none; color: var(--text); border-right: 1px solid var(--mid); transition: background 0.2s; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
-.page-nav-card:last-child { border-right: none; }
-.page-nav-card:hover { background: var(--white); }
-.page-nav-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 1rem; }
-.page-nav-title { font-family: 'DM Serif Display', serif; font-size: 1.7rem; line-height: 1.2; margin-bottom: 0.75rem; }
-.page-nav-title em { font-style: italic; transition: color 0.2s; }
-.page-nav-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; flex: 1; }
-.page-nav-arrow { margin-top: 1.5rem; font-size: 1.3rem; color: var(--faint); display: inline-block; transition: transform 0.2s, color 0.2s; }
-.page-nav-card:hover .page-nav-arrow { transform: translate(4px,-4px); color: var(--text); }
-.page-nav-card:hover .page-nav-title em { color: var(--blue); }
+/* ── PROJECTS ── */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.1rem; }
+.project-card { background: var(--light); border: 1px solid var(--mid); border-radius: 10px; padding: 1.5rem 1.3rem; position: relative; transition: transform 0.2s, background 0.2s, border-color 0.2s; text-decoration: none; display: flex; flex-direction: column; }
+.project-card:hover { transform: translateY(-4px); background: var(--off); border-color: var(--border); }
+.project-cat { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.project-title-sm { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.96rem; color: var(--white); line-height: 1.3; margin-bottom: 0.5rem; }
+.project-desc-sm { font-size: 0.81rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.9rem; flex: 1; }
+.project-tech-sm { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--faint); margin-bottom: 0.9rem; }
+.project-link-sm { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 600; color: var(--text); }
+.project-card:hover .project-link-sm { color: var(--accent); }
+
+/* ── EDUCATION ── */
+.edu-period { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--faint); margin-bottom: 0.4rem; }
+.edu-school { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.25rem; color: var(--white); margin-bottom: 0.3rem; }
+.edu-degree-name { font-size: 0.87rem; font-weight: 600; color: var(--accent); margin-bottom: 0.9rem; }
+.edu-detail { color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin-bottom: 1rem; max-width: 640px; }
+.edu-focus-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+/* ── SHOWCASE ── Skills / Academic & Hackathons / Certifications.
+   Deliberately different design language than the rest of the page: a bordered
+   "terminal window" widget (titlebar + tabs) whose three panels slide
+   horizontally via prev/next arrows, tab clicks, or swipe. See CLAUDE.md. */
+.showcase-window {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--off);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(2,12,27,0.45);
+}
+.showcase-window:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.showcase-titlebar { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.1rem; background: var(--bg-deep); border-bottom: 1px solid var(--border); }
+.showcase-tabs { display: flex; gap: 0.35rem; overflow-x: auto; }
+.showcase-tab {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 500;
+  color: var(--faint); background: transparent; border: 1px solid transparent; border-radius: 6px;
+  padding: 0.4rem 0.75rem; cursor: pointer; white-space: nowrap; transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.showcase-tab:hover { color: var(--text); }
+.showcase-tab.active { color: var(--accent); background: var(--accent-dim); border-color: var(--accent); }
+
+.showcase-stage { display: flex; align-items: stretch; }
+.showcase-arrow {
+  flex-shrink: 0; width: 46px; display: flex; align-items: center; justify-content: center;
+  background: var(--off); border: none; border-right: 1px solid var(--border);
+  color: var(--faint); cursor: pointer; transition: color 0.2s, background 0.2s;
+}
+.showcase-arrow--next { border-right: none; border-left: 1px solid var(--border); }
+.showcase-arrow:hover { color: var(--accent); background: var(--accent-dim); }
+.showcase-arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.showcase-viewport { flex: 1; min-width: 0; overflow: hidden; }
+.showcase-track { display: flex; align-items: flex-start; transition: transform 0.45s cubic-bezier(.65,0,.35,1), height 0.3s ease; }
+.showcase-panel { flex: 0 0 100%; min-width: 0; padding: 2rem 1.8rem; max-height: 560px; overflow-y: auto; }
+
+.showcase-progress { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 1.1rem; border-top: 1px solid var(--border); background: var(--bg-deep); }
+.showcase-progress-label { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--faint); white-space: nowrap; }
+.showcase-progress-track { flex: 1; height: 2px; background: var(--mid); position: relative; border-radius: 2px; overflow: hidden; }
+.showcase-progress-fill { position: absolute; top: 0; left: 0; height: 100%; width: 33.3333%; background: var(--accent); transition: transform 0.45s cubic-bezier(.65,0,.35,1); }
+
+/* skills panel */
+.sc-skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 1.4rem; }
+.sc-skill-head { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.7rem; }
+.sc-skill-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.sc-skill-name { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.92rem; color: var(--white); }
+.sc-skill-caps { color: var(--muted); font-size: 0.82rem; line-height: 1.6; margin-bottom: 0.8rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.sc-skill-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* academic & hackathons panel */
+.sc-academic-item { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--mid); }
+.sc-academic-item:first-child { padding-top: 0; }
+.sc-academic-item:last-child { padding-bottom: 0; border-bottom: none; }
+.sc-academic-bar { width: 3px; border-radius: 3px; flex-shrink: 0; background: var(--mid); }
+.sc-academic-bar--winner { background: var(--accent); }
+.sc-academic-bar--runner { background: var(--amber-mid); }
+.sc-academic-org { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.3rem; }
+.sc-academic-title-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+.sc-academic-title { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.95rem; color: var(--white); }
+.sc-academic-title a { color: inherit; text-decoration: none; }
+.sc-academic-title a:hover { color: var(--accent); }
+.sc-academic-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 100px; }
+.sc-academic-badge--winner { background: var(--accent-dim); color: var(--accent); }
+.sc-academic-badge--runner { background: var(--amber-light); color: var(--amber); }
+.sc-academic-period { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--faint); margin-bottom: 0.4rem; }
+.sc-academic-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+
+/* certifications panel */
+.sc-cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.sc-cert-card { border: 1px solid var(--mid); border-radius: 10px; background: var(--light); padding: 1.1rem 1.1rem 1.2rem; text-decoration: none; display: block; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+.sc-cert-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cert-color, var(--accent)); }
+.sc-cert-card:hover { transform: translateY(-3px); border-color: var(--border); }
+.sc-cert-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--faint); margin-bottom: 0.5rem; }
+.sc-cert-name { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.88rem; color: var(--white); line-height: 1.35; margin-bottom: 0.7rem; }
+.sc-cert-skills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sc-cert-skills .tag { font-size: 0.64rem; }
 
 @media (max-width: 1024px) {
-  #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 5rem 2rem 2rem; }
-  .hero-right { display: none; }
-  #about { grid-template-columns: 1fr; }
-  .about-block + .about-block { border-left: none; border-top: 1px solid var(--mid); }
-  .about-block { padding: 2.5rem 2rem; }
-  #skills-snap { padding: 3rem 2rem; }
-  .tech-row { grid-template-columns: 1fr 1fr; }
-  .page-nav-grid { grid-template-columns: 1fr; }
-  .page-nav-card { border-right: none; border-bottom: 1px solid var(--mid); }
+  .hero-portrait { width: 230px; }
 }
-@media (max-width: 640px) { .tech-row { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  .hero-content { flex-direction: column; gap: 2.5rem; }
+  .hero-portrait { width: 200px; margin: 0 auto; }
+  .tabs { flex-direction: column; gap: 1.25rem; }
+  .tab-list { flex-direction: row; border-left: none; border-bottom: 2px solid var(--mid); overflow-x: auto; min-width: 0; }
+  .tab { border-left: none; border-bottom: 2px solid transparent; margin-left: 0; margin-bottom: -2px; white-space: nowrap; }
+  .tab.active { border-left-color: transparent; border-bottom-color: var(--accent); }
+  .sc-skills-grid { grid-template-columns: 1fr; }
+  .showcase-panel { padding: 1.6rem 1.2rem; max-height: 440px; }
+  .showcase-arrow { width: 38px; }
+  .showcase-progress-label { font-size: 0.66rem; }
+}
 </style>
 </head>
 <body>
 <div class="page-wrap">
 
   <section id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow" id="hero-eyebrow"></p>
-      <h1 class="hero-name">Tomás<br><em>Lopera</em><br>Duque</h1>
-      <p class="hero-bio" id="hero-bio"></p>
-      <div class="hero-cta">
-        <a href="/projects" class="btn btn-primary">View Projects</a>
-        <a id="hero-github" href="#" target="_blank" class="btn btn-ghost">GitHub</a>
-        <a id="hero-linkedin" href="#" target="_blank" class="btn btn-ghost">LinkedIn</a>
+    <div class="content hero-content">
+      <div class="hero-text">
+        <h1 class="hero-name">Hi, I'm <em>Tomas</em></h1>
+        <p class="hero-bio" id="hero-bio"></p>
+        <div class="hero-cta">
+          <a id="hero-contact" href="#" class="btn btn-ghost btn-mail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2.3V17h18V7.3l-8.4 6.3a1 1 0 0 1-1.2 0L3 7.3Zm1.5-.3 7.5 5.6L19.5 7H4.5Z"/></svg>
+            Get in Touch
+          </a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <canvas id="portrait-canvas" aria-hidden="true"></canvas>
       </div>
     </div>
-    <div class="hero-right" id="hero-right"></div>
   </section>
 
-  <section id="about">
-    <div class="about-block reveal">
-      <div class="about-label">Who I am</div>
-      <p id="about-who"></p>
+  <section id="about" class="content reveal">
+    <div class="section-header">
+      <h2 class="section-title">about me</h2>
+      <span class="section-rule"></span>
     </div>
-    <div class="about-block reveal" style="transition-delay:0.1s">
-      <div class="about-label">What I focus on</div>
+    <div class="about-text">
+      <p id="about-who"></p>
       <p id="about-focus"></p>
     </div>
+    <ul class="tri-list about-tech" id="about-tech"></ul>
   </section>
 
-  <section id="skills-snap">
-    <div class="section-label">Technologies</div>
-    <h2 class="section-title reveal">Stack</h2>
-    <div class="tech-row" id="tech-row"></div>
+  <section id="experience" class="content reveal">
+    <div class="section-header">
+      <h2 class="section-title">experience</h2>
+      <span class="section-rule"></span>
+    </div>
+    <div class="tabs">
+      <div class="tab-list" id="exp-tab-list" role="tablist"></div>
+      <div class="tab-panels" id="exp-tab-panels"></div>
+    </div>
   </section>
 
-  <section id="page-nav">
-    <div class="page-nav-grid">
-      <a href="/projects" class="page-nav-card reveal">
-        <div>
-          <div class="page-nav-eyebrow">Portfolio</div>
-          <h2 class="page-nav-title">All <em>Projects</em></h2>
-          <p class="page-nav-desc">20+ projects across Data Engineering, Data Science, AI, BI and Backend — with full stack details and GitHub links.</p>
+  <section id="projects" class="content reveal">
+    <div class="section-header">
+      <h2 class="section-title">projects</h2>
+      <span class="section-rule"></span>
+      <a id="projects-github" href="#" target="_blank" class="section-link">View all on GitHub →</a>
+    </div>
+    <div class="projects-grid" id="projects-grid"></div>
+  </section>
+
+  <section id="education" class="content reveal">
+    <div class="section-header">
+      <h2 class="section-title">education</h2>
+      <span class="section-rule"></span>
+    </div>
+    <div id="edu-primary"></div>
+  </section>
+
+  <section id="showcase" class="content reveal">
+    <div class="section-header">
+      <h2 class="section-title">beyond the resume</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="showcase-window" id="showcase-window" tabindex="0">
+      <div class="showcase-titlebar">
+        <div class="showcase-tabs" id="showcase-tabs" role="tablist"></div>
+      </div>
+
+      <div class="showcase-stage">
+        <button class="showcase-arrow showcase-arrow--prev" id="showcase-prev" aria-label="Previous panel">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="showcase-viewport">
+          <div class="showcase-track" id="showcase-track"></div>
         </div>
-        <span class="page-nav-arrow">↗</span>
-      </a>
-      <a href="/experience" class="page-nav-card reveal" style="transition-delay:0.08s">
-        <div>
-          <div class="page-nav-eyebrow">Work &amp; Academic</div>
-          <h2 class="page-nav-title">My <em>Experience</em></h2>
-          <p class="page-nav-desc">Product Operations Analyst at Alegra, a prior internship at Cadena SA, two hackathon finishes and a range of academic challenges and research projects.</p>
+        <button class="showcase-arrow showcase-arrow--next" id="showcase-next" aria-label="Next panel">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="showcase-progress">
+        <span class="showcase-progress-label" id="showcase-progress-label"></span>
+        <div class="showcase-progress-track">
+          <div class="showcase-progress-fill" id="showcase-progress-fill"></div>
         </div>
-        <span class="page-nav-arrow">↗</span>
-      </a>
-      <a href="/education" class="page-nav-card reveal" style="transition-delay:0.16s">
-        <div>
-          <div class="page-nav-eyebrow">Background</div>
-          <h2 class="page-nav-title">Education &amp; <em>Credentials</em></h2>
-          <p class="page-nav-desc">Software Engineering at Universidad EIA with a focus on data and AI, complemented by industry certifications in deep learning, NLP, and prompt engineering.</p>
-        </div>
-        <span class="page-nav-arrow">↗</span>
-      </a>
+      </div>
     </div>
   </section>
 
 </div>
 <script src="/data.js"></script>
 <script src="/nav.js"></script>
+<script src="/portrait.js"></script>
 <script>
-/* 1 — Populate all content from DATA */
-document.getElementById('hero-eyebrow').textContent   = DATA.role;
-document.getElementById('hero-bio').textContent        = DATA.bio;
-document.getElementById('hero-github').href            = DATA.github;
-document.getElementById('hero-linkedin').href          = DATA.linkedin;
-document.getElementById('about-who').textContent       = DATA.aboutWho;
-document.getElementById('about-focus').textContent     = DATA.aboutFocus;
+initPortrait();
 
-document.getElementById('hero-right').innerHTML = DATA.stats.map(s => `
-  <div class="hero-tile">
-    <div class="hero-tile-bar" style="background:${s.color}"></div>
-    <div class="hero-tile-num">${s.num}</div>
-    <div class="hero-tile-label">${s.label}</div>
-    <div class="hero-tile-desc">${s.desc}</div>
-  </div>`).join('');
+/* ── Hero ── */
+document.getElementById('hero-bio').textContent = DATA.bio;
+document.getElementById('hero-contact').href = `mailto:${DATA.email}`;
 
-document.getElementById('tech-row').innerHTML = DATA.stack.map((cat, i) => `
-  <div class="tech-cat reveal" style="transition-delay:${i * 0.06}s">
-    <div class="tech-cat-header">
-      <div class="tech-cat-dot" style="background:${cat.color}"></div>
-      <span class="tech-cat-name">${cat.name}</span>
+/* ── About ── */
+document.getElementById('about-who').innerHTML = DATA.aboutWho;
+document.getElementById('about-focus').innerHTML = DATA.aboutFocus;
+document.getElementById('about-tech').innerHTML = `<li>Some of the tech I work with: ${DATA.aboutTech.map(t => `<strong>${t}</strong>`).join(', ')}</li>`;
+
+/* ── Shared tab behavior (Experience + Skills) ── */
+function initTabs(listEl, panelsEl) {
+  listEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tab');
+    if (!btn) return;
+    const idx = btn.dataset.index;
+    listEl.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.index === idx));
+    panelsEl.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.index === idx));
+  });
+}
+
+/* ── Experience (tabs): jobs + consultancy ── */
+const expTabList = document.getElementById('exp-tab-list');
+const expTabPanels = document.getElementById('exp-tab-panels');
+expTabList.innerHTML = DATA.work.map((w, i) => `
+  <button class="tab ${i === 0 ? 'active' : ''}" data-index="${i}" role="tab">${w.company}</button>
+`).join('');
+function renderExpEntry(w) {
+  return `
+    <div class="exp-role">${w.title}${w.company ? ` <span class="exp-co">@ ${w.company}</span>` : ''}</div>
+    <div class="exp-period">${w.period}${w.status ? `<span class="exp-status">${w.status}</span>` : ''}</div>
+    <p class="exp-desc">${w.description}</p>
+    ${w.bullets && w.bullets.length ? `<ul class="tri-list exp-bullets">${w.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
+    <div class="exp-stack">${w.stack.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+  `;
+}
+function renderConsultancyProject(p) {
+  return `
+    <div class="exp-sub-client">${p.client}</div>
+    <div class="exp-role">${p.title}</div>
+    <div class="exp-period">${p.period}</div>
+    <p class="exp-desc">${p.description}</p>
+  `;
+}
+expTabPanels.innerHTML = DATA.work.map((w, i) => `
+  <div class="tab-panel ${i === 0 ? 'active' : ''}" data-index="${i}">
+    ${w.type === 'consultancy'
+      ? w.projects.map(p => `<div class="exp-subproject">${renderConsultancyProject(p)}</div>`).join('')
+      : renderExpEntry(w)}
+  </div>
+`).join('');
+initTabs(expTabList, expTabPanels);
+
+/* ── Showcase: Skills / Academic & Hackathons / Certifications ──
+   A single "terminal window" widget — deliberately different from the rest of
+   the page's flowing sections — whose three panels slide horizontally via
+   tab clicks, the prev/next arrows, swipe, or the left/right arrow keys. */
+const SKILL_COLOR = {
+  "Software Engineer":   "var(--teal-mid)",
+  "Data Engineering":    "var(--blue-mid)",
+  "AI Engineer":         "var(--purple-mid)",
+  "Cloud Engineer":      "var(--amber-mid)",
+};
+function renderSkillsPanel() {
+  return `<div class="sc-skills-grid">${DATA.skills.map(s => `
+    <div class="sc-skill-block">
+      <div class="sc-skill-head">
+        <span class="sc-skill-dot" style="background:${SKILL_COLOR[s.name] || 'var(--accent)'}"></span>
+        <span class="sc-skill-name">${s.name}</span>
+      </div>
+      ${s.capabilities ? `<ul class="tri-list sc-skill-caps">${s.capabilities.map(c => `<li>${c}</li>`).join('')}</ul>` : ''}
+      <div class="sc-skill-tools">${(s.tools || []).map(t => `<span class="chip">${t}</span>`).join('')}</div>
     </div>
-    <div class="chips-wrap">${cat.chips.map(c => `<span class="chip">${c}</span>`).join('')}</div>
-  </div>`).join('');
+  `).join('')}</div>`;
+}
+function renderAcademicPanel() {
+  return DATA.academic.map(a => {
+    const barMod = a.badgeStyle === 'winner' ? ' sc-academic-bar--winner' : a.badgeStyle === 'runner' ? ' sc-academic-bar--runner' : '';
+    const badgeMod = a.badgeStyle === 'winner' ? 'sc-academic-badge--winner' : 'sc-academic-badge--runner';
+    const title = a.repo ? `<a href="${a.repo}" target="_blank">${a.title}</a>` : a.title;
+    return `
+    <div class="sc-academic-item">
+      <div class="sc-academic-bar${barMod}"></div>
+      <div>
+        <div class="sc-academic-org">${a.org}</div>
+        <div class="sc-academic-title-row">
+          <span class="sc-academic-title">${title}</span>
+          ${a.badge ? `<span class="sc-academic-badge ${badgeMod}">${a.badge}</span>` : ''}
+        </div>
+        <div class="sc-academic-period">${a.period}</div>
+        <p class="sc-academic-desc">${a.description}</p>
+      </div>
+    </div>`;
+  }).join('');
+}
+function renderCertificationsPanel() {
+  return `<div class="sc-cert-grid">${DATA.certifications.map(c => `
+    <a href="${c.link}" target="_blank" class="sc-cert-card" style="--cert-color:${c.color}">
+      <div class="sc-cert-meta">${c.provider} · ${c.date}</div>
+      <div class="sc-cert-name">${c.name}</div>
+      <div class="sc-cert-skills">${c.skills.map(s => `<span class="tag">${s}</span>`).join('')}</div>
+    </a>
+  `).join('')}</div>`;
+}
 
-/* 2 — Init reveal AFTER all content is in the DOM */
+const SHOWCASE_PANELS = [
+  { label: 'skills',               title: 'Skills',               render: renderSkillsPanel },
+  { label: 'academic experience',  title: 'Academic Experience',  render: renderAcademicPanel },
+  { label: 'certifications',       title: 'Certifications',       render: renderCertificationsPanel },
+];
+
+const scWindow = document.getElementById('showcase-window');
+const scTabs = document.getElementById('showcase-tabs');
+const scTrack = document.getElementById('showcase-track');
+const scProgressLabel = document.getElementById('showcase-progress-label');
+const scProgressFill = document.getElementById('showcase-progress-fill');
+
+scTabs.innerHTML = SHOWCASE_PANELS.map((p, i) => `<button class="showcase-tab ${i === 0 ? 'active' : ''}" data-index="${i}" role="tab">${p.label}</button>`).join('');
+scTrack.innerHTML = SHOWCASE_PANELS.map(p => `<div class="showcase-panel">${p.render()}</div>`).join('');
+
+let scIndex = 0;
+function goToShowcasePanel(i) {
+  scIndex = (i + SHOWCASE_PANELS.length) % SHOWCASE_PANELS.length;
+  scTrack.style.transform = `translateX(-${scIndex * 100}%)`;
+  scTrack.style.height = `${scTrack.children[scIndex].offsetHeight}px`;
+  scTabs.querySelectorAll('.showcase-tab').forEach(t => t.classList.toggle('active', Number(t.dataset.index) === scIndex));
+  scProgressLabel.textContent = `0${scIndex + 1} / 0${SHOWCASE_PANELS.length} — ${SHOWCASE_PANELS[scIndex].title}`;
+  scProgressFill.style.transform = `translateX(${scIndex * 100}%)`;
+}
+scTabs.addEventListener('click', e => {
+  const btn = e.target.closest('.showcase-tab');
+  if (btn) goToShowcasePanel(Number(btn.dataset.index));
+});
+document.getElementById('showcase-prev').addEventListener('click', () => goToShowcasePanel(scIndex - 1));
+document.getElementById('showcase-next').addEventListener('click', () => goToShowcasePanel(scIndex + 1));
+scWindow.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') { e.preventDefault(); goToShowcasePanel(scIndex - 1); }
+  if (e.key === 'ArrowRight') { e.preventDefault(); goToShowcasePanel(scIndex + 1); }
+});
+let scTouchX = null;
+scTrack.addEventListener('touchstart', e => { scTouchX = e.touches[0].clientX; }, { passive: true });
+scTrack.addEventListener('touchend', e => {
+  if (scTouchX === null) return;
+  const dx = e.changedTouches[0].clientX - scTouchX;
+  if (Math.abs(dx) > 40) goToShowcasePanel(scIndex + (dx < 0 ? 1 : -1));
+  scTouchX = null;
+}, { passive: true });
+window.addEventListener('resize', () => goToShowcasePanel(scIndex));
+goToShowcasePanel(0);
+
+/* ── Projects (featured subset; rest live on GitHub) ── */
+document.getElementById('projects-github').href = DATA.github;
+const CAT_COLOR = {
+  "Data Engineering": "var(--blue-mid)",
+  "Data Science":     "var(--purple-mid)",
+  "AI":                "var(--teal-mid)",
+  "BI":                "var(--amber-mid)",
+  "Backend":           "var(--coral-mid)",
+  "Cloud":             "var(--green-mid)",
+};
+document.getElementById('projects-grid').innerHTML = DATA.projects.filter(p => p.featured).map(p => {
+  const color = CAT_COLOR[p.category] || 'var(--blue-mid)';
+  return `
+  <a href="${p.repo}" target="_blank" class="project-card">
+    <div class="project-cat" style="color:${color}">${p.category}</div>
+    <h3 class="project-title-sm">${p.title}</h3>
+    <p class="project-desc-sm">${p.description}</p>
+    <div class="project-tech-sm">${p.stack.slice(0, 4).join(' · ')}</div>
+    <span class="project-link-sm">View on GitHub →</span>
+  </a>`;
+}).join('');
+
+/* ── Education ── */
+const primary = DATA.education.find(e => e.primary) || DATA.education[0];
+document.getElementById('edu-primary').innerHTML = `
+  <div class="edu-period">${primary.period}</div>
+  <h3 class="edu-school">${primary.school}</h3>
+  <div class="edu-degree-name">${primary.degree}</div>
+  <p class="edu-detail">${primary.detail}</p>
+  <ul class="tri-list edu-focus-row">${primary.focus.map(f => `<li>${f}</li>`).join('')}</ul>
+`;
+
+/* ── Init reveal AFTER all content is in the DOM ── */
 initReveal();
 </script>
 </body>
