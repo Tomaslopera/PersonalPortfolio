@@ -8,22 +8,23 @@ const DATA = {
   /* ── PERSONAL ── */
   name:       "Tomás Lopera Duque",
   nameShort:  "Tomás Lopera",
-  role:       "Product Operations Analyst | Software Engineer | Data Engineer | AI Engineer | AWS",
+  role:       "Software Engineer · Data Engineer · AI Engineer · Cloud Engineer",
   location:   "Colombia",
   university: "EIA University",
   github:     "https://github.com/Tomaslopera",
   linkedin:   "https://www.linkedin.com/in/tomaslopera/",  /* update with your real LinkedIn URL */
+  email:      "loperatomas410@gmail.com",
+  whatsapp:   "https://wa.me/573046576354",
 
-  /* Absolute path (from site root) to your CV PDF, placed in the project root.
-     Set to null to hide the download button. */
-  cvPath: "/cv_tomas_lopera.pdf",
+  /* bio: short line shown in the HERO section only — identity/tagline, no role details (those live in aboutWho) */
+  bio: "Software Engineer with hands-on experience across full-stack systems, cloud infrastructure and data & AI solutions.",
 
-  /* bio: short line shown in the HERO section only */
-  bio: "Passionate about building scalable data solutions that support analytics and AI use cases. Experienced in SQL, Python, ETL/ELT pipelines and AWS cloud services.",
+  /* aboutTech: short tech highlight line shown in the ABOUT ME section */
+  aboutTech: ["Python", "SQL", "AWS", "Java"],
 
   /* about: two separate paragraphs in the ABOUT strip on the home page */
-  aboutWho:   "Product Operations Analyst at Alegra, coordinating cross-functional work across the product area while architecting AI agents and internal tooling that automate product workflows. Background in data engineering, data science, and AWS cloud infrastructure.",
-  aboutFocus: "Continuously expanding expertise in modern data engineering and cloud technologies — ETL/ELT pipelines, dimensional modeling, AWS orchestration, Lakehouse architectures, and intelligent AI agents using LLMs and RAG.",
+  aboutWho: "Currently a Product Operations Analyst at Alegra, where I design and build AI-driven tooling that automates internal product workflows.",
+  aboutFocus: "Outside that role, I build end-to-end software projects with frontend, backend and db integrated, AWS cloud deployments, data pipelines, ML models and AI agents.",
 
   /* ── HERO STATS ── */
   stats: [
@@ -33,19 +34,48 @@ const DATA = {
     { num: "2026", label: "Expected Graduation", desc: "Software Engineering · EIA University",   color: "var(--purple-mid)" },
   ],
 
-  /* ── TECH STACK ── */
-  stack: [
-    { name: "Core Languages",    color: "var(--muted)",      chips: ["SQL", "Python", "Bash", "Java", "Git", "Docker"] },
-    { name: "Data Engineering",  color: "var(--blue-mid)",   chips: ["Pandas", "Spark", "dbt", "Prefect", "Airflow", "Databricks", "Snowflake"] },
-    { name: "AWS",               color: "var(--teal-mid)",   chips: ["IAM", "S3", "EC2", "VPC", "Lambda", "RDS", "Glue", "Redshift", "Athena", "SageMaker", "Textract", "API Gateway"] },
-    { name: "Data Science & AI", color: "var(--purple-mid)", chips: ["scikit-learn", "SHAP", "LangChain", "Agents", "RAG"] },
-    { name: "BI & Visualization", color: "var(--amber-mid)", chips: ["Power BI", "DAX", "Matplotlib", "Seaborn"] },
-    { name: "Others",           color: "var(--coral-mid)",  chips: ["n8n", "FastAPI", "MySQL", "PostgreSQL", "React", "SQLAlchemy", "SQLServer"] },
+  /* ── SKILLS ── one entry per tab in the Skills section.
+     capabilities (optional): narrative skill statements, no tool names
+     tools (optional):        reference chips for that tab                 */
+  skills: [
+    { name: "Software Engineer",
+      capabilities: [
+        "Backend & REST API Design and Development",
+        "Object-Oriented Programming & Clean Code",
+        "Relational Database Design & ORM Modeling",
+        "Containerization & Git-Based Version Control",
+      ],
+      tools: ["Python", "SQL", "Java", "Git", "Docker", "FastAPI", "Node.js", "MySQL", "PostgreSQL", "React", "SQLServer", "n8n"] },
+    { name: "Data Engineering",
+      capabilities: [
+        "SQL & Data Manipulation",
+        "Python for Data Processing & Automation",
+        "ETL/ELT Pipeline Development & Orchestration",
+        "Data Warehouse, Lake & Lakehouse Modeling",
+        "Pipeline Orchestration & Workflow Automation",
+      ],
+      tools: ["Pandas", "Spark", "dbt", "Prefect", "Airflow", "Databricks", "Snowflake"] },
+    { name: "AI Engineer",
+      capabilities: [
+        "Exploratory Data Analysis & Visualization",
+        "Feature Engineering & Preprocessing",
+        "Model Training & Evaluation",
+        "Generative AI & Large Language Models (LLMs)",
+      ],
+      tools: ["scikit-learn", "LangChain", "RAG", "Agents", "MCPs"] },
+    { name: "Cloud Engineer",
+      capabilities: [
+        "Cloud Infrastructure Design & Deployment (AWS)",
+        "Identity, Access & Network Management (IAM, VPC)",
+        "Serverless & Event-Driven Architectures",
+        "Data Warehousing & Analytics on AWS",
+      ],
+      tools: ["IAM", "S3", "EC2", "VPC", "Lambda", "RDS", "Glue", "Redshift", "Athena", "SageMaker", "Textract", "API Gateway"] },
   ],
 
   /* ── PROJECTS ── */
   projects: [
-    { category: "Data Engineering", title: "AWS ETL + Data Warehouse + BI",
+    { category: "Data Engineering", featured: true, title: "AWS ETL + Data Warehouse + BI",
       role: "ETL flow design · AWS orchestration · Prefect & crontab · BI integration",
       description: "End-to-end pipeline for the Olist dataset using AWS and Prefect. Automates ETL from PostgreSQL (RDS) to S3, integrates Redshift Serverless via Glue, and connects the DW to PowerBI.",
       stack: ["Python", "Prefect", "RDS", "S3", "Glue", "Redshift", "Power BI", "Boto3"],
@@ -85,7 +115,7 @@ const DATA = {
       description: "Production-ready ETL pipeline for processing procurement data using Apache Airflow, designed for scalable cloud-based data workflows.",
       stack: ["Python", "Apache Airflow", "AWS", "ETL"],
       repo: "https://github.com/Tomaslopera/etl_contrataciones" },
-    { category: "Data Science", title: "Telco Customer Churn · Classification",
+    { category: "Data Science", featured: true, title: "Telco Customer Churn · Classification",
       role: "EDA · preprocessing · SHAP feature selection · model comparison",
       description: "Binary classification to predict customer churn. Achieved ~84% accuracy with LR, KNN, Decision Tree, and Random Forest — robust pipeline with no data leakage.",
       stack: ["scikit-learn", "SHAP", "Pandas", "IterativeImputer"],
@@ -110,12 +140,12 @@ const DATA = {
       description: "Forecasting the 'Gasoleos' variable from the energy dataset. RNN achieved 4% MAPE and SARIMAX 8%.",
       stack: ["TensorFlow", "Statsmodels", "Skforecast", "scikit-learn"],
       repo: "https://github.com/Tomaslopera/TimeSeries_FuelConsumption" },
-    { category: "AI", title: "AI Negotiation System · Hackathon Winner",
+    { category: "AI", featured: true, title: "AI Negotiation System · Hackathon Winner",
       role: "Data engineering & cleaning · RAG chatbot implementation",
       description: "AI-based negotiation system to assist customers with loan difficulties. EDA and data cleaning implemented in a RAG-powered chatbot for Sistecredito.",
       stack: ["Python", "RAG", "OpenAI", "Pandas"],
       repo: "https://github.com/Tomaslopera/Hackathon_Sistecredito" },
-    { category: "AI", title: "Logistic Agent · Hackathon Runner-Up",
+    { category: "AI", featured: true, title: "Logistic Agent · Hackathon Runner-Up",
       role: "Dummy DB data engineering · n8n orchestration",
       description: "Logistics agent for Haceb's call center using n8n orchestration, ETL from Google Drive to Postgres (Supabase), vector-based retrieval, and OpenAI API.",
       stack: ["n8n", "Microsoft Power Automate", "OpenAI"],
@@ -135,7 +165,7 @@ const DATA = {
       description: "Collection of dashboards solving business cases — video game sales, global indicators, HR analytics, and personal finance.",
       stack: ["Power BI", "DAX", "Power Query"],
       repo: "https://github.com/Tomaslopera/PowerBI_Projects" },
-    { category: "Backend", title: "Recircular · Circular Economy Marketplace",
+    { category: "Backend", featured: true, title: "Recircular · Circular Economy Marketplace",
       role: "Relational schema & REST API for auth, publications and orders",
       description: "Circular economy marketplace for posting, buying, selling, and reusing materials. Full REST API with FastAPI and MySQL.",
       stack: ["React", "FastAPI", "MySQL"],
@@ -145,7 +175,7 @@ const DATA = {
       description: "Parking space reservation application with registration, login, password change, reservations, and history.",
       stack: ["React", "FastAPI", "MySQL"],
       repo: "https://github.com/Tomaslopera/ParkHub" },
-    { category: "Cloud", title: "AWS Avianca Demo · Full Cloud Deployment",
+    { category: "Cloud", featured: true, title: "AWS Avianca Demo · Full Cloud Deployment",
       role: "AWS infrastructure · Cognito auth (PKCE) · Contentful CMS · Lambda + API Gateway backend",
       description: "Full deployment of an airline web app on AWS. Frontend hosted on S3 + CloudFront with OAC. Auth via Cognito (email, phone, Google, Facebook — PKCE flow). Dynamic content managed with Contentful. Backend powered by API Gateway, Lambda, and RDS. Integrated with Google Analytics and OpenShift.",
       stack: ["S3", "CloudFront", "Cognito", "API Gateway", "Lambda", "RDS", "Contentful", "Google Analytics", "OpenShift"],
@@ -169,15 +199,33 @@ const DATA = {
       stack:       ["Claude", "MCP", "Linear", "Google Workspace", "Automation", "Product Ops"],
     },
     {
-      company:     "Cuántico Seguros",
-      title:       "Cloud Developer",
-      period:      "Apr 2026 — Jul 2026",
-      status:      null,
-      description: "Developed and deployed a web platform for an insurance company, with full ownership over frontend development and AWS cloud infrastructure.",
-      bullets: [
-        "Designed and implemented the frontend and AWS cloud infrastructure using S3, CloudFront, Contentful, and Google Analytics.",
+      /* Consultancy — direct/freelance-style projects (not a single employer).
+         Pinned at position 2: more of these are coming as I take on new client work. */
+      company:     "Consultancy",
+      type:        "consultancy",
+      projects: [
+        {
+          client:      "Cuántico Seguros",
+          title:       "Cloud Developer",
+          period:      "Apr 2026 — Jul 2026",
+          description: "Developed and deployed a web platform for an insurance company, with full ownership over frontend development and AWS cloud infrastructure.",
+          bullets: [
+            "Designed and implemented the frontend and AWS cloud infrastructure using S3, CloudFront, Contentful, and Google Analytics.",
+          ],
+          stack: ["S3", "CloudFront", "Contentful", "Google Analytics", "Frontend"],
+        },
+        {
+          client:      "Universidad EIA × Cadena SA",
+          title:       "AI Developer",
+          period:      "Jun 2025 — Oct 2025",
+          description: "Developed an OCR MVP and proposed a full AWS deployment architecture as part of a university-industry innovation challenge for EIA University and Cadena SA.",
+          bullets: [
+            "Built an OCR MVP using AWS Textract and OpenCV to extract and validate data from technical data sheets.",
+            "Proposed and documented a full AWS deployment architecture for scaling the solution to production.",
+          ],
+          stack: ["Python", "AWS Textract", "OpenCV", "Streamlit", "AWS"],
+        },
       ],
-      stack:       ["S3", "CloudFront", "Contentful", "Google Analytics", "Frontend"],
     },
     {
       company:     "Cadena SA",
@@ -192,18 +240,6 @@ const DATA = {
       ],
       stack:       ["Python", "SQL", "ETL", "Textract", "S3", "RDS", "SageMaker", "Redshift", "QuickSight"],
     },
-    {
-      company:     "Universidad EIA",
-      title:       "AI Developer",
-      period:      "Jun 2025 — Oct 2025",
-      status:      null,
-      description: "Developed an OCR MVP and proposed a full AWS deployment architecture as part of a university-industry innovation challenge for EIA University and Cadena SA.",
-      bullets: [
-        "Built an OCR MVP using AWS Textract and OpenCV to extract and validate data from technical data sheets.",
-        "Proposed and documented a full AWS deployment architecture for scaling the solution to production.",
-      ],
-      stack:       ["Python", "AWS Textract", "OpenCV", "Streamlit", "AWS"],
-    },
   ],
 
   /* ── ACADEMIC EXPERIENCE (hackathons, research, university projects) ── */
@@ -216,10 +252,6 @@ const DATA = {
       badge: "Runner-Up", badgeStyle: "runner",
       description: "Logistics agent responding in natural language about order status and inventory using n8n orchestration, ETL from Google Drive to Postgres (Supabase), and OpenAI API.",
       repo: "https://github.com/Tomaslopera/Hackathon_Haceb" },
-    { org: "EIA University · Cadena SA", title: "Technical Data Sheet Validation", period: "06/2025 – 11/2025",
-      badge: null,
-      description: "Workflow extracting, validating, and highlighting key information from technical data sheets using AWS Textract, OpenCV, and Streamlit. Presented to the client with scientific documentation.",
-      repo: "https://github.com/Tomaslopera/Reto_Cadena" },
     { org: "ISA", title: "Innovation Hackathon Participant", period: "05/2024",
       badge: null,
       description: "Data analysis of ISA's databases focused on improving maintenance of electrical towers and power distribution infrastructure.",
@@ -236,7 +268,7 @@ const DATA = {
 
   /* ── EDUCATION ── */
   education: [
-    { period: "2022 — 2026 (expected)", school: "Universidad EIA",
+    { period: "2022 — 2026", school: "Universidad EIA",
       degree: "Software & Computer Engineering · Undergraduate",
       detail: "Focus on Data Engineering, Data Science, and Artificial Intelligence. Coursework covers ETL/ELT pipelines, dimensional modeling, feature engineering, and AI agents powered by RAG and LLMs.",
       focus: ["Data Engineering", "Data Science", "Machine Learning", "AI Agents", "Cloud Architecture"],
